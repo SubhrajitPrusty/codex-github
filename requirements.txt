@@ -1,2 +1,4 @@
 django
 psycopg2==2.5.3
+bs4
+requests
