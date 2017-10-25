@@ -23,7 +23,7 @@ def contrib(username):
 	for tag in tags:
 		tagStrLis = str(tag.getText()).split("\n")
 		tagStr = " ".join([x.strip() for x in tagStrLis]).strip()
-		cont+=tagStr+';'
+		cont+=tagStr+'; '
 	
 	return cont.strip()
 
