@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% for member in members %}
+<ul style="margin-top: 2rem;">
+	<li style="list-style-type: none;">
+		<div class="card" style="width: 60%">
+		<div class="card-header" style="background-color: #224466; color: white">{{ member.name }}</div>
+		<div class="card-body">
+			<h4 class="card-title"><a href="https://github.com/{{ member.username }}">{{ member.username }}</a></h4>
+			<p class="card-text">{{ member.contrib }}</p>
+		</div>
+		</div>
+	</li>
+</ul>
+	
+{% endfor %}
+{% endblock %}}

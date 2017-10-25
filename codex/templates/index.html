@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>[CODEX]</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+	<nav class="navbar sticky-top navbar-dark" style="height: 4rem; font-size: 2rem; color: white; background-color: #123456">[ C O D E X ]</nav>
+	{% block content %}{% endblock %}
+	
+</body>
+</html>

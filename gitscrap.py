@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup as bs4
 import requests
 import datetime
 import json
+import os
 
 def contrib(username):
 
@@ -22,20 +23,25 @@ def contrib(username):
 	for tag in tags:
 		tagStrLis = str(tag.getText()).split("\n")
 		tagStr = " ".join([x.strip() for x in tagStrLis]).strip()
-		cont+=tagStr+"\n"
+		cont+=tagStr+';'
 	
-	return cont
+	return cont.strip()
 
+json_file_path = os.path.join("codex","static","users.json")
 
-# print(contrib("dibyasonu"))
-
-users = open("users.json","r+")
+users = open(json_file_path,"r+")
 userstext = users.read()
 j = json.loads(userstext)
+
+print("Fetching contribution data... This may take some time...")
+
 for x in j['members']:
 	y = contrib(x['username'])
 	x['contrib'] = y
+users.close()
 
+os.remove(json_file_path)
 
-users.seek(0)
+users = open(json_file_path,"w")
 users.write(str(j).replace("\'",'\"'))
+users.close()
