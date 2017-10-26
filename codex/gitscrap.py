@@ -27,7 +27,7 @@ def contrib(username):
 	
 	return cont.strip()
 
-json_file_path = os.path.join("codex","static","users.json")
+json_file_path = os.path.join("static","users.json")
 
 users = open(json_file_path,"r+")
 userstext = users.read()

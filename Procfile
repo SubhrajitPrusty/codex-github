@@ -1,1 +1,1 @@
-web: cd codex && python manage.py runserver 0.0.0.0:$PORT
+web: cd codex && python gitscrap.py && python manage.py runserver 0.0.0.0:5000

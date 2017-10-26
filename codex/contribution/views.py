@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
-from django.contrib.staticfiles.templatetags.staticfiles import static
-
+# from django.contrib.staticfiles.templatetags.staticfiles import static
 import json
 import os
 
