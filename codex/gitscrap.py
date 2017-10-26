@@ -6,10 +6,10 @@ import os
 
 def contrib(username):
 
-	codexstart = "2017-09-15"
-	date = str(datetime.date.today())
+	# codexstart = "2017-09-15"
+	# date = str(datetime.date.today())
 
-	link = "http://www.github.com/"+username+"?tab=overview&from="+codexstart+"&to="+date
+	link = "http://www.github.com/"+username+"?tab=overview" #&from="+codexstart+"&to="+date
 
 	url = requests.get(link)
 
