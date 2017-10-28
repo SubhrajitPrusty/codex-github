@@ -4,13 +4,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title>[CODEX]</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+	<link rel="icon" type="image/png" href="{% static 'images/codexlogo.png' %}">
+	<link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css" %}'>
 </head>
 <body style="background-color: #eee">
-	<nav class="navbar sticky-top navbar-dark" style="height: 4rem; font-size: 2rem; color: white; background-color: #888888">
-		<b>C O D E X - Season 2</b>
+	<style>
+		.navbar
+		{
+			height: 4rem;
+			font-size: 2rem;
+			color: white;
+			background-color: #568ed5;
+		}
+		ul
+		{
+			margin-left: -2rem;
+		}
+
+		li
+		{
+			list-style-type: none;
+		}
+		.card-header
+		{
+			background-color: #5e56d5;
+			height: 3rem;
+			font-family: Tahoma;
+			color: #eeeeee;
+		}
+		.card
+		{
+			box-shadow: 10px 10px 5px #888888;
+		}
+	</style>
+	<nav class="navbar sticky-top navbar-dark">
+		<b>CODEX</b> Season 2
 	</nav>
+
+	<div class="alert alert-primary">List of all contributions of CODEX members</div>
+
 	{% block content %}{% endblock %}
 	
 </body>

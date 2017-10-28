@@ -2,17 +2,23 @@
 
 {% block content %}
 {% for member in members %}
-<ul style="margin-top: 2rem;">
-	<li style="list-style-type: none;">
-		<div class="card" style="width: 60%">
-		<div class="card-header" style="background-color: #bababa; color: white">{{ member.name }}</div>
+
+<ul>
+	<li class="container-fluid">
+		<div class="card">
+		<h4>
+			<div class="card-header">{{ member.name }}</div>
+		</h4>
 		<div class="card-body">
-			<h4 class="card-title"><a href="https://github.com/{{ member.username }}">{{ member.username }}</a></h4>
 			<p class="card-text">{{ member.contrib }}</p>
+			<a href="https://github.com/{{ member.username }}" class="btn btn-primary">Github</a>
+		</div>
 		</div>
 		</div>
 	</li>
 </ul>
+
+		
 	
 {% endfor %}
 {% endblock %}}
