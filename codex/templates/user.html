@@ -3,21 +3,24 @@
 {% block content %}
 {% for member in members %}
 
+<div class="container" id="listcontainer">
 <ul>
-	<li class="container-fluid">
+	<li>
 		<div class="card">
-		<h4>
-			<div class="card-header">{{ member.name }}</div>
-		</h4>
+		
+			<div class="card-header">
+				<h4>{{ member.name }}</h4>
+			</div>
+		
 		<div class="card-body">
 			<p class="card-text">{{ member.contrib }}</p>
-			<a href="https://github.com/{{ member.username }}" class="btn btn-primary">Github</a>
+			<a href="https://github.com/{{ member.username }}" class="btn btn-primary" id="profbtn">Github</a>
 		</div>
 		</div>
 		</div>
 	</li>
 </ul>
-
+</div>
 		
 	
 {% endfor %}

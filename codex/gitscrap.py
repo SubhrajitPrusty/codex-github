@@ -1,13 +1,9 @@
 from bs4 import BeautifulSoup as bs4
 import requests
-import datetime
 import json
 import os
 
 def contrib(username):
-
-	# codexstart = "2017-09-15"
-	# date = str(datetime.date.today())
 
 	link = "http://www.github.com/"+username+"?tab=overview" #&from="+codexstart+"&to="+date
 

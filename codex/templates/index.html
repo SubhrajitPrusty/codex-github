@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>[CODEX]</title>
+	<title>CODEX Github</title>
 
 	<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 
@@ -11,19 +11,39 @@
 	<link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css" %}'>
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
 </head>
-<body style="background-color: #eee">
+<body style="background-color: #6e828a">
 	<style>
+		:root
+		{
+	  		--main-bg-color: #212121;
+	  		--sub-bg-color: #212121;
+	  		--sub2-bg-color: #323232;
+	  		--text-color-primary: #eeeeee;
+	  		--text-color-secondary: #14ffec;
+	  	}
+	  	@font-face
+	  	{
+	  		font-family: 'Poiret One', cursive;
+	  	}
+	  	html, body
+		{
+			height: 100%;
+		}
 		.navbar
 		{
 			height: 4rem;
 			font-size: 2rem;
 			color: white;
-			background-color: #5e56d5;
+			/*background-color: #5e56d5;*/
+			background-color: var(--main-bg-color);
+			color: var(--text-color-secondary);
 		}
-		ul
+	
+		#listcontainer
 		{
-			margin-left: -2rem;
+			padding: 0rem;
 		}
 
 		li
@@ -32,26 +52,57 @@
 		}
 		.card-header
 		{
-			background-color: #568ed5;
+			background-color: var(--sub-bg-color);
 			height: 3rem;
 			font-family: Tahoma;
-			color: #ffffff;
+			color: var(--text-color-primary);
+		}
+		.card-body
+		{
+			background-color: var(--sub2-bg-color);
+		}
+		.card-text
+		{
+			color: var(--text-color-primary);			
 		}
 		.card
 		{
-			box-shadow: 10px 10px 5px #888888;
+			box-shadow: 10px 10px 5px var(--sub-bg-color);
+		}
+		/*#profbtn
+		{
+			background-color: #00adb5;
+		}*/
+
+		#navbadge
+		{
+			background-color: var(--sub2-bg-color);
+			color: var(--text-color-secondary);
+			font-family: 'Poiret One';
+		}
+		#titletext
+		{
+			font-family: 'Poiret One';
+		}
+		.alert
+		{
+			font-family: 'Helvetica';
 		}
 	</style>
 
 	<nav class="navbar sticky-top navbar-dark">
-		<b>CODEX</b><span class="badge badge-info">Season 2</span>
+		<b id="titletext">CODEX</b><span class="badge badge-light" id="navbadge">Season 2</span>
 	</nav>
 
 	<div class="alert alert-info" role="alert">
-  List of all contributions of <a class="btn btn-outline-info" href="http://github.com/codex-iter/">CODEX</a> members
+  List of all contributions of  <a class="alert-link" href="http://github.com/codex-iter/">CODEX</a>  members
 	</div>
 
-	{% block content %}{% endblock %}
+	<div class="alert alert-success" role="alert">
+		Last updated at {{ localtime }}
+	</div>
+
 	
+	{% block content %}{% endblock %}
 </body>
 </html>
