@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup as bs4
 import requests
 import json
 import os
+import time
 
 def contrib(username):
 
@@ -36,6 +37,8 @@ for x in j['members']:
 	x['contrib'] = y
 users.close()
 
+localtime = time.asctime(time.localtime(time.time()))
+j['time'] = localtime
 os.remove(json_file_path)
 
 users = open(json_file_path,"w")

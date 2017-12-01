@@ -4,7 +4,6 @@ from django.http import HttpResponse
 # from django.contrib.staticfiles.templatetags.staticfiles import static
 import json
 import os
-import time
 
 # Create your views here.
 
@@ -13,7 +12,7 @@ def index(request):
 	jtext = open(json_file_path,"r")
 	j = json.load(jtext)
 	members = j['members']
-	localtime = time.asctime(time.localtime(time.time()))
+	localtime = j['time']
 	context = {"members":members,"localtime":localtime}
 	
 	jtext.close()
