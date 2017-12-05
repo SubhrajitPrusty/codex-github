@@ -47,7 +47,7 @@ users.close()
 zone = timezone("Asia/Kolkata")
 t = datetime.now(zone)
 localtime = t.strftime("%T %D")
-j['time'] = localtimeP
+j['time'] = localtime
 os.remove(json_file_path)
 
 users = open(json_file_path,"w")
