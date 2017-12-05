@@ -13,16 +13,22 @@ def contrib(username):
 
 	soup = bs4(url.text,"html.parser")
 
+	green_tags = soup.findAll("span",{"class":"f6 text-green"})
+	
 	btags = soup.findAll("button")
 	tags = [tag for tag in btags if tag.findChild("span",{"class":"float-left"})]
 	
 	cont = ""
-
 	for tag in tags:
 		tagStrLis = str(tag.getText()).split("\n")
 		tagStr = " ".join([x.strip() for x in tagStrLis]).strip()
 		cont+=tagStr+'; '
 	
+	for green in green_tags:
+		greenStrLis = str(green.getText()).split("\n")
+		greenStr = " ".join([x.strip() for x in greenStrLis]).strip()
+		cont+=greenStr+'; '
+
 	return cont.strip()
 
 json_file_path = os.path.join("static","users.json")
@@ -41,7 +47,7 @@ users.close()
 zone = timezone("Asia/Kolkata")
 t = datetime.now(zone)
 localtime = t.strftime("%T %D")
-j['time'] = localtime
+j['time'] = localtimeP
 os.remove(json_file_path)
 
 users = open(json_file_path,"w")
