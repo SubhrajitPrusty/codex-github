@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup as bs4
 import requests
 import json
 import os
-import time
+from datetime import datetime
+from pytz import timezone
 
 def contrib(username):
 
@@ -37,7 +38,9 @@ for x in j['members']:
 	x['contrib'] = y
 users.close()
 
-localtime = time.asctime(time.localtime(time.time()))
+zone = timezone("Asia/Kolkata")
+t = datetime.now(zone)
+localtime = t.strftime("%T %D")
 j['time'] = localtime
 os.remove(json_file_path)
 
