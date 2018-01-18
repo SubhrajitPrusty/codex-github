@@ -13,15 +13,15 @@
 	<link rel="stylesheet" type="text/css" href='{% static "css/bootstrap.min.css" %}'>
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
 </head>
-<body style="background-color: #6e828a">
+<body style="background-color: #33425b">
 	<style>
 		:root
 		{
 	  		--main-bg-color: #212121;
-	  		--sub-bg-color: #212121;
-	  		--sub2-bg-color: #323232;
-	  		--text-color-primary: #eeeeee;
-	  		--text-color-secondary: #14ffec;
+	  		--sub-bg-color: #303841;
+	  		--sub2-bg-color: #3a4750;
+	  		--text-color-primary: #e3eff3;
+	  		--text-color-secondary: #00adb5;
 	  	}
 	  	@font-face
 	  	{
@@ -61,6 +61,10 @@
 		{
 			background-color: var(--sub2-bg-color);
 		}
+		.card-title
+		{
+			color: var(--text-color-primary);			
+		}
 		.card-text
 		{
 			color: var(--text-color-primary);			
@@ -83,6 +87,7 @@
 		#titletext
 		{
 			font-family: 'Poiret One';
+			color: var(--text-color-secondary);
 		}
 		.alert
 		{
