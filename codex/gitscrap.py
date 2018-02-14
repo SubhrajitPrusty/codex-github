@@ -60,5 +60,5 @@ j['time'] = localtime
 os.remove(json_file_path)
 
 users = open(json_file_path,"w")
-users.write(str(j).replace("\'",'\"'))
+users.write(str(json.dumps(j,indent=4,sort_keys=False)).replace("\'",'\"'))
 users.close()
