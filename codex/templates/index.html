@@ -14,15 +14,15 @@
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 </head>
-<body style="background-color: #33425b">
+<body style="background-color: #5BD">
 	<style>
 		:root
 		{
-	  		--main-bg-color: #212121;
-	  		--sub-bg-color: #303841;
-	  		--sub2-bg-color: #3a4750;
-	  		--text-color-primary: #e3eff3;
-	  		--text-color-secondary: #00adb5;
+	  		--main-bg-color: #363b74;
+	  		--sub2-bg-color: #add1fc;
+	  		--sub-bg-color: #1160aa;
+	  		--text-color-primary: #2c2c2c;
+	  		--text-color-secondary: #EEEEEE;
 	  	}
 	  	@font-face
 	  	{
@@ -34,19 +34,12 @@
 		}
 		.navbar
 		{
-			height: 4rem;
-			font-size: 2rem;
-			color: white;
-			/*background-color: #5e56d5;*/
+			height: 5rem;
+			font-size: 3rem;
 			background-color: var(--main-bg-color);
 			color: var(--text-color-secondary);
 		}
 	
-		#listcontainer
-		{
-			padding: 0rem;
-		}
-
 		li
 		{
 			list-style-type: none;
@@ -56,7 +49,7 @@
 			background-color: var(--sub-bg-color);
 			height: 3rem;
 			font-family: Tahoma;
-			color: var(--text-color-primary);
+			color: var(--text-color-secondary);
 		}
 		.card-body
 		{
@@ -70,45 +63,55 @@
 		{
 			color: var(--text-color-primary);			
 		}
-		.card
-		{
-			box-shadow: 10px 10px 5px var(--sub-bg-color);
-		}
-		/*#profbtn
-		{
-			background-color: #00adb5;
-		}*/
-
-		#navbadge
-		{
-			background-color: var(--sub2-bg-color);
-			color: var(--text-color-secondary);
-			font-family: 'Poiret One';
-		}
 		#titletext
 		{
-			font-family: 'Poiret One';
+			align-content: center;
+			font-family: 'Poiret One','Helvetica';
 			color: var(--text-color-secondary);
+			text-align: center;
+			width: 100%;
 		}
 		.alert
 		{
 			font-family: 'Helvetica';
 		}
+		
+		.pad
+		{
+			width: 15%;
+		}
+
+		#central
+		{
+			position: relative;
+			display: table;
+			margin: 0 auto;
+			/*align-content: center;*/
+			text-align: center;
+		}
 	</style>
 
 	<nav class="navbar sticky-top navbar-dark">
-		<b id="titletext">CODEX</b><span class="badge badge-light" id="navbadge">Season 2</span>
+		<b id="titletext">CODEX</b>
 	</nav>
 
-	<div class="alert alert-info" role="alert">
-  List of all contributions of  <a class="alert-link" href="http://github.com/codex-iter/">CODEX</a>  members
+	<div class="alert alert-primary" role="alert">
+  <em>List of all contributions of  <a class="alert-link" href="http://github.com/codex-iter/">CODEX</a>  members</em>
 	</div>
 
-	<div class="alert alert-success" role="alert">
+	<div class="alert alert-primary" role="alert">
 		Last updated at {{ localtime }}
 	</div>
 
+	<table>
+		<tr>
+			<td class="pad"></td>
+			<td id="central">
+				{% block content %}{% endblock %}
+			</td>
+			<td class="pad"></td>
+		</tr>
+	</table>
 	
-	{% block content %}{% endblock %}
 </body>
 </html>
