@@ -11,11 +11,6 @@ def contrib(username):
 
 	url = requests.get(link)
 	soup = bs4(url.content,"html.parser")
-
-	green_tags = soup.findAll("span",{"class":"f6 text-green"})
-	
-	btags = soup.findAll("button")
-	tags = [tag for tag in btags if tag.findChild("span",{"class":"float-left"})]
 	
 	bigtext = soup.find("h2",{"class":"f4 text-normal mb-2"})
 
