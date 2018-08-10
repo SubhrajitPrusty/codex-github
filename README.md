@@ -1,6 +1,10 @@
-# git-scrap-codex
-Contributions of github user since Codex 2017 induction
+# codex-github
+Contributions of Codex members on Github
 
-## Running
+[![](https://img.shields.io/badge/codex-github-blue.svg?style=for-the-badge)](http://codex-github.herokuapp.com)
 
-Run gitscrap.py once to update the JSON file
+---
+
+![](https://img.shields.io/badge/python-3-blue.svg?style=for-the-badge)
+
+![](https://img.shields.io/badge/python-flask-green.svg?style=for-the-badge)
