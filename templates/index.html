@@ -54,15 +54,15 @@
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane fade in active" id="buyTicket">
 								<div class="row">
-									{% for member in context['members'] %}
+									{% for member in context %}
 									
 									<div class="col-md-6">
 										<div class="profile">
 											<div class="card" style="width: 18rem;">
-												<img class="card-img-top" src="{{ member.photo }}" alt="Profile Picture">
+												<img class="card-img-top" src="{{ member.avatar }}" alt="Profile Picture">
 												<div class="card-body">
 													<h5 class="card-title">{{ member.name }}</h5>
-													<p class="card-text">{{ member.bigtext }}</p>
+													<p class="card-text">{{ member.totalCommits }}</p>
 													<a href="https://github.com/{{ member.username }}" class="btn btn-primary">{{ member.username }}</a>
 												</div>
 											</div>

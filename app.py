@@ -2,22 +2,24 @@ from flask import Flask, url_for, render_template
 import json
 import os 
 from gevent.pywsgi import WSGIServer
-
+import os
+from pymongo import MongoClient
 
 def getContent():
-	json_file_path = os.path.join('static', "users.json")
+	dburl = os.environ['MONGODB_URI']
 
-	jtext = open(json_file_path,"r")
-	j = json.load(jtext)
-	members = j['members']
-	localtime = j['time']
-	context = {"members":members,"localtime":localtime}
+	client = MongoClient(dburl)
+
+	db = client.get_default_database()
+
+	members = db.members
 	
-	jtext.close()
+	data = []
 
-	# print(context)
-	return context
-
+	for mem in members.find():
+		data.append(mem)
+	
+	return data
 
 app = Flask(__name__, static_url_path='/static')
 
