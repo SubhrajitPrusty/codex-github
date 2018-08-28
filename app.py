@@ -2,7 +2,6 @@ from flask import Flask, url_for, render_template
 import json
 import os 
 from gevent.pywsgi import WSGIServer
-import os
 from pymongo import MongoClient
 
 def getContent():
@@ -23,10 +22,9 @@ def getContent():
 
 app = Flask(__name__, static_url_path='/static')
 
-content = getContent()
-
 @app.route("/")
-def hello():
+def index():
+	content = getContent()
 	return render_template('index.html',context=content)
 
 if __name__ == '__main__':

@@ -42,5 +42,5 @@ with open(users_json,"r+") as usernames:
 			},
 			upsert=False)
 
-for mem in members:
+for mem in members.find():
 	print(mem)

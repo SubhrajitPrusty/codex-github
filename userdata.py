@@ -77,7 +77,7 @@ class Member():
 		stats = json.loads(r.text)
 		total = [0]
 		for st in stats:
-			if st['author']['login'].lower() == self.username:
+			if st['author']['login'].lower() == self.username.lower():
 				total.append(int(st['total']))
 				break
 
