@@ -5,7 +5,7 @@ import sys
 from pymongo import MongoClient
 from userdata import Member
 
-dburl = os.environ['MONGODB_URI']
+dburl = os.environ["MONGODB_URI"]
 
 client = MongoClient(dburl)
 
@@ -13,7 +13,7 @@ db = client.get_default_database()
 
 members = db.members
 
-users_json = os.path.join('static', "users.json")
+users_json = os.path.join("static", "users.json")
 
 with open(users_json,"r+") as usernames:
 	usernames = json.loads(usernames.read())
@@ -30,12 +30,15 @@ with open(users_json,"r+") as usernames:
 			"nRepos" : m.nRepos,
 			"followers" : m.followers,
 			"following" : m.following,
-			'totalCommits' : m.totalCommits
+			"totalCommits" : m.totalCommits
 		}
 
+		if None in ud.values():
+			m.fetch()
+							
 		members.update_one(
 			{
-				"username": ud['username']
+				"username": ud["username"]
 			},
 			{
 				"$set": ud
