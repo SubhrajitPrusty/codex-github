@@ -1,93 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<title>Codex</title>
-	
-	<!-- Bootstrap -->
-	<link href="static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="static/css/custom.css" rel="stylesheet">
-	
-	<!-- fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,100" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet">
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		
-		<div class="loader">
-			<div>
-				<img src="/static/images/icons/preloader.gif" />
-			</div>
-		</div>
-		
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-5 left-wrapper">
-					<div class="event-banner-wrapper">
-						<div class="logo">
-							<h1>Codex</h1>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-7 right-wrapper">
-					<div class="event-ticket-wrapper">
-						
-						<div class="event-tab">
-							
-							<!-- <ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="#buyTicket" aria-controls="buyTicket" role="tab" data-toggle="tab">Buy Tickets</a></li>
-								<li role="presentation"><a href="#venue" aria-controls="venue" role="tab" data-toggle="tab">Venue</a></li>
-								
-								
-								<li role="presentation"><a href="#termCondition" aria-controls="termCondition" role="tab" data-toggle="tab">Terms & Conditions</a></li>
-							</ul>
-						-->
-						<div class="tab-content">
-							<div role="tabpanel" class="tab-pane fade in active" id="buyTicket">
-								{% for member in context %}
-								<div class="row">
-									<div class="col-md-6">
-										<div class="profile">
-											<div class="card" style="width: 18rem;">
-												<img class="card-img-top" src="{{ member.avatar }}" alt="Profile Picture">
-												<div class="card-body">
-													<h5 class="card-title">{{ member.name }}</h5>
-													<p class="card-text">
-														Repositories : {{ member.nRepos }} <br>
-														Followers : {{ member.followers }} <br>
-														Total commits : {{ member.totalCommits }} <br>
-													</p>
-													<a href="https://github.com/{{ member.username }}" class="btn btn-primary">{{ member.username }}</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								{% endfor %}
-							</div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
+<!-- saved from url=(0025)https://linuxjourney.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Linux Journey</title>
+  <script type="text/javascript" async="" src="./Home _ Linux Journey_files/ga.js.download"></script>
+  <script src="./Home _ Linux Journey_files/application-8013fdc35e4c79f95bcb3d655ff61f137ac05bcee52e6d96588427a84eddef12.js.download" data-turbolinks-track="true"></script>
+  <link rel="stylesheet" media="all" href="./Home _ Linux Journey_files/application-b0b91461d093aa2ed95d8a7467856e4dc16f55744d3c17a927c3598e5b26cd3f.css" data-turbolinks-track="true">
+  <link rel="shortcut icon" type="image/x-icon" href="https://linuxjourney.com/assets/favicon-e8bea7a0071e296638a3a1a08be81f0a30b9c945625e5a200fefecd8d9b2ed6c.ico">
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="+SigYZVkV4ZAjsAmlkVFAeZqVKQy4LhaVF78SenSDxSspJB10vObnrVcFBOZqQobka1tUQys9KVhIlcwme87Og==">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="navbar navbar-custom navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a id="logo" class="navbar-brand" href="https://linuxjourney.com/">Codex</a>
+    </div>
+  </div>
+</nav>
+
+    
+    
+<div class="jumbotron vertical-align">
+  <div class="container-fluid buffer-top">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img alt="Codex logo" src="./Home _ Linux Journey_files/logo.png" class="img-responsive vertical-align">
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/allscript.js"></script>
-</body>
-</html>
+<div class="container content">
+  <div class="row">
+      <!-- Begin MailChimp Signup Form -->
+      <link href="./Home _ Linux Journey_files/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+      <style type="text/css">
+      	#mc_embed_signup{background:none; font:12px Helvetica,Arial,sans-serif; width:100%;}
+      	#mc_embed_signup input.email{font-size:12px;}
+      	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+      	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+      </style>
+      <!--End mc_embed_signup-->
+      <h1 id="member" class="text-center buffer-bottom">Members</h1>
+      <hr>
+      {% for member in context %}
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail thumbnail-border fade">
+          <a href="https://github.com/{{ member.username }}">
+            <img alt="Profile Picture" class="img-circle" src="{{ member.avatar }}">
+            <div class="caption">
+              <h3>{{ member.name }}</h3>
+              <p style="color: #2C3E50; font-size: 20px;">
+                Repositories : {{ member.nRepos }}<br>
+                 Followers : {{ member.followers }}<br>
+                 Total commits : {{ member.totalCommits }} <br></p>
+            </div>
+          </a>    
+        </div>
+      </div> 
+      {% endfor %}
+  </div>
+</div>
+    
+  </div><!-- end of wrap -->
+  <footer class="footer">
+  <div class="container text-center">
+    <div class="row buffer-top">
+      <div class="col-md-4">
+        <h5>Subscribe</h5>
+        <p>
+          Get updates about new courses and lessons!
+          <a href="https://linuxjourney.com/subscribe">Subscribe</a>
+        </p>
+      </div>
+        
+      <div class="col-md-4">
+        <h5>About Us</h5>
+        <p>The knowledge gained here today was powered by the open-source community.</p>
+        <p><a href="https://github.com/cindyq/linuxjourney">Contribute and Collaborate</a></p>
+      </div>
+        
+      <div class="col-md-4">
+        <h5>Contact Us</h5>
+        <p>See a bug? Any complaints? Just want to send a note?
+        <a href="mailto:contact@linuxjourney.com">Let us know</a></p>
+      </div>
+    
+    </div>
+  </div>
+</footer>
+  
+
+
+</body></html>
