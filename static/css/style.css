@@ -6057,7 +6057,7 @@ a.badge:hover, a.badge:focus {
 .thumbnail a > img {
   display: block;
   width: 100% \9;
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
