@@ -1,34 +1,28 @@
 <!DOCTYPE html>
-<!-- saved from url=(0025)https://linuxjourney.com/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Linux Journey</title>
-  <script type="text/javascript" async="" src="./Home _ Linux Journey_files/ga.js.download"></script>
-  <script src="./Home _ Linux Journey_files/application-8013fdc35e4c79f95bcb3d655ff61f137ac05bcee52e6d96588427a84eddef12.js.download" data-turbolinks-track="true"></script>
-  <link rel="stylesheet" media="all" href="./Home _ Linux Journey_files/application-b0b91461d093aa2ed95d8a7467856e4dc16f55744d3c17a927c3598e5b26cd3f.css" data-turbolinks-track="true">
-  <link rel="shortcut icon" type="image/x-icon" href="https://linuxjourney.com/assets/favicon-e8bea7a0071e296638a3a1a08be81f0a30b9c945625e5a200fefecd8d9b2ed6c.ico">
-  <meta name="csrf-param" content="authenticity_token">
-<meta name="csrf-token" content="+SigYZVkV4ZAjsAmlkVFAeZqVKQy4LhaVF78SenSDxSspJB10vObnrVcFBOZqQobka1tUQys9KVhIlcwme87Og==">
+  <title>Codex</title>
+  <link rel="stylesheet" media="all" href="static/css/style.css" data-turbolinks-track="true">
+  <link rel="icon" type="image/png" href="static/images/logo.png">
+
 </head>
 <body>
   <div class="wrap">
     <nav class="navbar navbar-custom navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a id="logo" class="navbar-brand" href="https://linuxjourney.com/">Codex</a>
+      <a id="logo" class="navbar-brand" href="#">CODEX</a>
     </div>
   </div>
 </nav>
 
-    
-    
 <div class="jumbotron vertical-align">
   <div class="container-fluid buffer-top">
     <div class="row">
       <div class="col-md-12 text-center">
-        <img alt="Codex logo" src="./Home _ Linux Journey_files/logo.png" class="img-responsive vertical-align">
+        <img alt="Codex logo" src="static/images/logo.png" class="img-responsive vertical-align" id="main-logo">
       </div>
     </div>
   </div>
@@ -37,15 +31,6 @@
 
 <div class="container content">
   <div class="row">
-      <!-- Begin MailChimp Signup Form -->
-      <link href="./Home _ Linux Journey_files/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-      <style type="text/css">
-      	#mc_embed_signup{background:none; font:12px Helvetica,Arial,sans-serif; width:100%;}
-      	#mc_embed_signup input.email{font-size:12px;}
-      	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-      	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-      </style>
-      <!--End mc_embed_signup-->
       <h1 id="member" class="text-center buffer-bottom">Members</h1>
       <hr>
       {% for member in context %}
@@ -57,8 +42,8 @@
               <h3>{{ member.name }}</h3>
               <p style="color: #2C3E50; font-size: 20px;">
                 Repositories : {{ member.nRepos }}<br>
-                 Followers : {{ member.followers }}<br>
-                 Total commits : {{ member.totalCommits }} <br></p>
+                Followers : {{ member.followers }}<br>
+                Total commits : {{ member.totalCommits }} <br></p>
             </div>
           </a>    
         </div>
@@ -72,23 +57,23 @@
   <div class="container text-center">
     <div class="row buffer-top">
       <div class="col-md-4">
-        <h5>Subscribe</h5>
+        <h5>Join Us</h5>
         <p>
-          Get updates about new courses and lessons!
-          <a href="https://linuxjourney.com/subscribe">Subscribe</a>
+          Join us to build awesome stuff together.
+          <a href="https://tiny.cc/joincodex">Subscribe</a>
         </p>
       </div>
         
       <div class="col-md-4">
         <h5>About Us</h5>
-        <p>The knowledge gained here today was powered by the open-source community.</p>
-        <p><a href="https://github.com/cindyq/linuxjourney">Contribute and Collaborate</a></p>
+        <p>Want to know about our community?</p>
+        <p><a href="https://github.com/codex-iter">Contribute and Collaborate</a></p>
       </div>
         
       <div class="col-md-4">
         <h5>Contact Us</h5>
         <p>See a bug? Any complaints? Just want to send a note?
-        <a href="mailto:contact@linuxjourney.com">Let us know</a></p>
+        <a href="mailto:codexiter@gmail.com">Let us know</a></p>
       </div>
     
     </div>

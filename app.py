@@ -18,7 +18,9 @@ def getContent():
 	for mem in members.find():
 		data.append(mem)
 	
-	return data
+	data = sorted(data, key=lambda k: k['totalCommits'])
+
+	return data[::-1]	
 
 app = Flask(__name__, static_url_path='/static')
 

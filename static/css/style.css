@@ -12,6 +12,11 @@ body {
   margin: 0;
 }
 
+#main-logo
+{
+  width: 50rem;
+}
+
 /* line 32, /usr/local/rvm/gems/ruby-2.2.4/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_normalize.scss */
 article,
 aside,
@@ -6057,7 +6062,7 @@ a.badge:hover, a.badge:focus {
 .thumbnail a > img {
   display: block;
   width: 100% \9;
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
