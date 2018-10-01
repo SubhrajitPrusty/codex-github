@@ -8270,8 +8270,8 @@ Home Page Content
 
 /* line 210, /home/ubuntu/workspace/linux_journey/app/assets/stylesheets/custom.css.scss */
 .fade:hover {
-  opacity: 0.90;
-  background: #18BC9C;
+  opacity: 0.80;
+  background: #2fcaccd1;
   color: white;
 }
 
