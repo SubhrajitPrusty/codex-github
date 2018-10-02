@@ -28,7 +28,7 @@ class Member():
     def printData(self):
         print("Name :", self.name)
         print("Username :", self.username)
-        print("Avatar :" self.avatar)
+        print("Avatar :", self.avatar)
         print("Bio :", self.bio)
         print("Public Repos :", self.nRepos)
         print("Followers :", self.followers)
