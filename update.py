@@ -4,6 +4,7 @@ import os
 import sys
 from pymongo import MongoClient
 from userdata import Member
+import re
 
 dburl = os.environ["MONGODB_URI"]
 
