@@ -1,1 +1,1 @@
-web:  python app.py
+web: python update.py && python app.py
