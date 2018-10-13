@@ -17,7 +17,13 @@ users_json = os.path.join("static", "users.json")
 
 with open(users_json, "r+") as usernames:
     usernames = json.loads(usernames.read())
-    # print(usernames)
+    
+    # insert if not present
+    for u in usernames:
+        if members.count_documents({"username": re.compile(u, re.IGNORECASE)}) == 0:
+            members.insert_one({"username": u})
+
+    # update db
     for u in usernames:
         m = Member(u)
         m.fetch()
