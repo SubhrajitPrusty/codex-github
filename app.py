@@ -30,7 +30,8 @@ app = Flask(__name__, static_url_path='/static')
 @app.route("/")
 def index():
     content = getContent()
-    return render_template('index.html', context=content)
+    total = sum([x['totalCommits'] for x in content])
+    return render_template('index.html', context=content, totalC=total)
 
 
 if __name__ == '__main__':
