@@ -16,7 +16,7 @@ class Member():
         self.bio = ""
         self.followers = 0
         self.following = 0
-        self.REPOS_URL = ""
+        self.REPOS_URL = f"https://api.github.com/users/{u}/repos"
         self.repos = []
         self.nRepos = 0
         self.totalCommits = 0
