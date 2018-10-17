@@ -55,7 +55,7 @@ class Member():
 			self.nRepos = userdata['public_repos']
 			self.bio = userdata['bio']
 			self.followers = userdata['followers']
-			self.following = userdata['following']		
+			self.following = userdata['following']
 
 			r = requests.get(self.REPOS_URL, params=payload)
 			# print(r)
