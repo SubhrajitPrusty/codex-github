@@ -43,7 +43,7 @@ class Member():
 
         USER_API = "https://api.github.com/users/{}".format(self.username)
         r = requests.get(USER_API, params=payload)
-        # print(r)
+        print(r, f"FETCHING {self.username}", USER_API)
         userdata = json.loads(r.text)
         try:
             self.avatar = userdata['avatar_url']
@@ -58,6 +58,7 @@ class Member():
 
         r = requests.get(self.REPOS_URL, params=payload)
         # print(r)
+        print(r, f"FETCHING {self.REPOS_URL}")
         rep = json.loads(r.text)
         for rs in rep:
             self.repos.append(rs['name'])
