@@ -45,13 +45,16 @@ class Member():
         r = requests.get(USER_API, params=payload)
         # print(r)
         userdata = json.loads(r.text)
-        self.avatar = userdata['avatar_url']
-        self.name = userdata['name']
-        self.REPOS_URL = userdata['repos_url']
-        self.nRepos = userdata['public_repos']
-        self.bio = userdata['bio']
-        self.followers = userdata['followers']
-        self.following = userdata['following']
+        try:
+            self.avatar = userdata['avatar_url']
+            self.name = userdata['name']
+            self.REPOS_URL = userdata['repos_url']
+            self.nRepos = userdata['public_repos']
+            self.bio = userdata['bio']
+            self.followers = userdata['followers']
+            self.following = userdata['following']
+        except:
+            pass
 
         r = requests.get(self.REPOS_URL, params=payload)
         # print(r)
@@ -72,7 +75,7 @@ class Member():
         r = requests.get(STATS_URL, params=payload)
         if r.status_code == 202:
             r = requests.get(STATS_URL, params=payload)
-        print(r)
+        # print(r)
         # print(r.text)
 
         if r.status_code == 403:
