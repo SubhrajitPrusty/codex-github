@@ -23,6 +23,9 @@ with open(users_json, "r+") as usernames:
     for u in usernames:
         if members.count_documents({"username": re.compile(u, re.IGNORECASE)}) == 0:
             members.insert_one({"username": u})
+            m = Member(u)
+			m.fetch()
+			del m
 
     # update db
     for u in usernames:
