@@ -42,6 +42,41 @@ Contributions of Codex members on Github
 - Everytime you add a new name to the list, it is safer to manually run `python update.py` \
   rather than wait for it to update at the next schedule
 
+# Members
+
+| Name | Github Username |
+|:------|:---------------:|
+| Ritika Mandal | [Ritika432](https://github.com/Ritika432)
+| Akshay | [akki031197](https://github.com/akki031197)
+| Jashaswee Jena| [jashasweejena](https://github.com/jashasweejena)
+| Salif Moin | [salif-04](https://github.com/salif-04)
+| Parag Bhattacharjee | [PsychoBoy5](https://github.com/PsychoBoy5)
+| Nehal Kumar Singh | [geekyNehal](https://github.com/geekyNehal)
+| Omm Mishra | [ommmishra](https://github.com/ommmishra)
+| Simran Agrawal | [SimranAgrawal1](https://github.com/SimranAgrawal1)
+| Shikha Kumari | [shikhanimmi](https://github.com/shikhanimmi)
+| Kumar Arunav | [KumarArunav](https://github.com/KumarArunav)
+| Dipannita Mahata | [dipu-m18](https://github.com/dipu-m18)
+| Shikha Singh | [SHIKHASINGH1506](https://github.com/SHIKHASINGH1506)
+| Anish Kumar Yadav | [anish-yadav](https://github.com/anish-yadav)
+| Swagat Parija | [swagat5147](https://github.com/swagat5147)
+| Mohit Agarwal | [mojito9542](https://github.com/mojito9542)
+| MD Azmal | [MD-AZMAL](https://github.com/MD-AZMAL)
+| Aruba Shireen | [aruba246](https://github.com/aruba246)
+| Ashis Padhi |	[AshisPadhi](https://github.com/AshisPadhi)
+| Pawan Kumar | [Pawan0411](https://github.com/Pawan0411)
+| Debashish Mishra | [Zanark](https://github.com/Zanark)
+| A Rupesh | [rupesh1310](https://github.com/rupesh1310)
+| Nirmal Kumar Bhakat | [Nirmal-Kr](https://github.com/Nirmal-Kr)
+| Subhrajit Prusty | [SubhrajitPrusty](https://github.com/SubhrajitPrusty)
+| Dibya Ranjan Jena | [dibyasonu](https://github.com/dibyasonu)
+| Sudhansu | [alphacrash](https://github.com/alphacrash)
+| Swaraj Laha | [swarajlaha](https://github.com/swarajlaha)
+| Srinibas Biswal | [srinibasbiswal](https://github.com/srinibasbiswal)
+| Sidharth | [xlreon](https://github.com/xlreon)
+| Ayush Mishra | [hsuay](https://github.com/hsuay)
+
+
 # Screenshots
 
 ![](./screenshot.png)
