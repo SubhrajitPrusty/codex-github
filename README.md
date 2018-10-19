@@ -1,9 +1,6 @@
-# codex-github
-Contributions of Codex members on Github
+# codex-github [![](https://img.shields.io/badge/codex-github-blue.svg?style=for-the-badge&display=inline-block)](http://codex.subhrajitpy.me)
+Contributions of Codex members on Github 
 
-[![](https://img.shields.io/badge/codex-github-blue.svg?style=for-the-badge)](http://codex-github.herokuapp.com)
-
----
 # Resources Used
 
 ![](https://img.shields.io/badge/python-flask-green.svg?style=for-the-badge&display=inline-block&logo=python)
