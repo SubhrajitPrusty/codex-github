@@ -62,6 +62,7 @@ Contributions of Codex members on Github
 | Swagat Parija | [swagat5147](https://github.com/swagat5147)
 | Mohit Agarwal | [mojito9542](https://github.com/mojito9542)
 | MD Azmal | [MD-AZMAL](https://github.com/MD-AZMAL)
+| Ankit Prasad | [Ankit289Prasad](https://github.com/Ankit289Prasad) 
 | Aruba Shireen | [aruba246](https://github.com/aruba246)
 | Ashis Padhi |	[AshisPadhi](https://github.com/AshisPadhi)
 | Pawan Kumar | [Pawan0411](https://github.com/Pawan0411)
