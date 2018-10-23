@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:---------------:|
+| Sachiket Behera | [sachiket](https://github.com/sachiket)
 | Ritika Mandal | [Ritika432](https://github.com/Ritika432)
 | Akshay | [akki031197](https://github.com/akki031197)
 | Jashaswee Jena| [jashasweejena](https://github.com/jashasweejena)
