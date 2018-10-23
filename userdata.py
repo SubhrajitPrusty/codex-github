@@ -57,6 +57,8 @@ class Member():
 			self.followers = userdata['followers']
 			self.following = userdata['following']
 
+			payload['per_page'] = 100
+
 			r = requests.get(self.REPOS_URL, params=payload)
 			# print(r)
 			print(r, f"FETCHING {self.REPOS_URL}")
