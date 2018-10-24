@@ -2,9 +2,12 @@ import requests
 import json
 import sys
 import os
+from dotenv import load_dotenv
 
-cid = os.environ['CLIENT_ID']
-csecret = os.environ['CLIENT_SECRET']
+load_dotenv()
+
+cid = os.environ.get('CLIENT_ID')
+csecret = os.environ.get('CLIENT_SECRET')
 
 
 class Member():
