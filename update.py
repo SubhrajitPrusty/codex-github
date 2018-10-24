@@ -5,8 +5,10 @@ import sys
 from pymongo import MongoClient
 from userdata import Member
 import re
+from dotenv import load_dotenv
 
-dburl = os.environ["MONGODB_URI"]
+load_dotenv()
+dburl = os.environ.get("MONGODB_URI")
 
 client = MongoClient(dburl)
 

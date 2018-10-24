@@ -3,10 +3,12 @@ import json
 import os
 from gevent.pywsgi import WSGIServer
 from pymongo import MongoClient
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def getContent():
-    dburl = os.environ['MONGODB_URI']
+    dburl = os.environ.get('MONGODB_URI')
 
     client = MongoClient(dburl)
 
