@@ -4,3 +4,4 @@ requests
 gevent
 Flask
 pymongo
+python-dotenv
