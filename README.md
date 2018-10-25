@@ -75,6 +75,7 @@ Contributions of Codex members on Github
 | Srinibas Biswal | [srinibasbiswal](https://github.com/srinibasbiswal)
 | Sidharth | [xlreon](https://github.com/xlreon)
 | Ayush Mishra | [hsuay](https://github.com/hsuay)
+| Naveli Choudhary | [navelic](https://github.com/navelic)
 
 
 # Screenshots
