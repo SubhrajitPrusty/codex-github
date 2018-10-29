@@ -51,7 +51,7 @@ Contributions of Codex members on Github
 
 - Start a container as
 
-  `docker run --rm -e CLIENT_ID=<client id> -e CLIENT_SECRET=<client secret> -e MONGODB_URI=<MongoDB connection string> --name codex-update codex --update`
+  `docker run --rm -e CLIENT_ID=<client id> -e CLIENT_SECRET=<client secret> -e MONGODB_URI=<MongoDB connection string> --name codex-update codex-github --update`
   
   with the variables set as described above.
   
@@ -59,7 +59,7 @@ Contributions of Codex members on Github
   
 - Now, start the web app as
 
-  `docker run -d -e CLIENT_ID=<client id> -e CLIENT_SECRET=<client secret> -e MONGODB_URI=<MongoDB connection string> --name codex-app codex`
+  `docker run -d -e CLIENT_ID=<client id> -e CLIENT_SECRET=<client secret> -e MONGODB_URI=<MongoDB connection string> --name codex-app codex-github`
   
 Whenever you want to update you local user/repository cache, just run the first command again. Please be aware however that
 you will need to rebuild the container if you change the user list.
