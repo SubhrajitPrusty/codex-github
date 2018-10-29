@@ -1,11 +1,15 @@
-from flask import Flask, url_for, render_template
-import json
 import os
+import sys
+
+from dotenv import load_dotenv
+from flask import Flask, url_for, render_template
 from gevent.pywsgi import WSGIServer
 from pymongo import MongoClient
-from dotenv import load_dotenv
+
+import update
 
 load_dotenv()
+
 
 def getContent():
     dburl = os.environ.get('MONGODB_URI')
@@ -37,6 +41,8 @@ def index():
 
 
 if __name__ == '__main__':
+    if sys.argv and '--update' in sys.argv:
+        update.main()
     port = int(os.environ.get('PORT', 5000))
     http_server = WSGIServer(('', port), app)
     http_server.serve_forever()

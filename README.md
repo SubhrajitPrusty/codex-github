@@ -36,11 +36,33 @@ Contributions of Codex members on Github
 - Browse to `localhost:5000`
 - Deploy to your preferred platform. I've used heroku.
 
-## Updating and maintainance
+## Updating and maintenance
 
 - Create a scheduler to run `python update.py` every hour. (If it is run more than once an hour, you can get rate limited)
 - Everytime you add a new name to the list, it is safer to manually run `python update.py` \
   rather than wait for it to update at the next schedule
+  
+# Run in Docker
+
+- Adjust your [users.json](./static/users.json) to list the users you want to include.
+- Build the image
+
+  `docker build -t codex-github .`
+
+- Start a container as
+
+  `docker run --rm -e CLIENT_ID=<client id> -e CLIENT_SECRET=<client secret> -e MONGODB_URI=<MongoDB connection string> --name codex-update codex --update`
+  
+  with the variables set as described above.
+  
+  This will update your local cache just like `python update.py` would.
+  
+- Now, start the web app as
+
+  `docker run -d -e CLIENT_ID=<client id> -e CLIENT_SECRET=<client secret> -e MONGODB_URI=<MongoDB connection string> --name codex-app codex`
+  
+Whenever you want to update you local user/repository cache, just run the first command again. Please be aware however that
+you will need to rebuild the container if you change the user list.
 
 # Members
 
