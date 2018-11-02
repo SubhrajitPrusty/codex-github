@@ -1,9 +1,10 @@
-from flask import Flask, url_for, render_template
+from flask import Flask, url_for, render_template, request
 import json
 import os
 from gevent.pywsgi import WSGIServer
 from pymongo import MongoClient
 from dotenv import load_dotenv
+from difflib import SequenceMatcher as SM
 
 load_dotenv()
 
@@ -33,7 +34,22 @@ app = Flask(__name__, static_url_path='/static')
 def index():
     content = getContent()
     total = sum([x['totalCommits'] for x in content])
-    return render_template('index.html', context=content, totalC=total)
+    return render_template('content.html', context=content, totalC=total, search=False)
+
+
+@app.route("/search")
+def searchMember():
+    query = request.args.get("query")
+    # print(query)
+    content = getContent()
+
+    ratios = [ { "ratio" : SM(None, x['name'].lower(), query.lower()).ratio(), "data": x } for x in content ]
+    
+    result = [ x['data'] for x in ratios if x['ratio'] > 0.4 ]
+
+    found = len(result) != 0
+    
+    return render_template('content.html', context=result, search=True, found=found)
 
 
 if __name__ == '__main__':
