@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+{% if not found and search %}
+
+<h1 class="display-1 text-center text-primary">No matching members found!</h1>
+
+{% else %}
+
+{% for member in context %}
+<div class="col-sm-6 col-md-3">
+	{% if context.index(member) == 0 and search == False %}
+	<img src="static/images/crown.png" alt="crown" style="max-width: 25%; position: absolute; margin-top: -15%; margin-left: 32.5%;">
+	{% endif %}
+	<div class="thumbnail thumbnail-border fade">
+		<a href="https://github.com/{{ member.username }}">
+			<img alt="Profile Picture" class="img-circle" src="{{ member.avatar }}">
+			<div class="caption">
+				<h3>{{ member.name }}</h3>
+				<p style="color: #2C3E50; font-size: 20px;">
+					Repositories : {{ member.nRepos }}<br>
+					Followers : {{ member.followers }}<br>
+					Total commits : {{ member.totalCommits }} <br></p>
+				</div>
+			</a>    
+		</div>
+	</div> 
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}
