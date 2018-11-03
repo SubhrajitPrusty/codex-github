@@ -5,3 +5,4 @@ gevent
 Flask
 pymongo
 python-dotenv
+fuzzywuzzy[speedup]

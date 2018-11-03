@@ -1,10 +1,12 @@
-from flask import Flask, url_for, render_template, request
 import json
 import os
+
+from flask import Flask, url_for, render_template, request
 from gevent.pywsgi import WSGIServer
 from pymongo import MongoClient
 from dotenv import load_dotenv
 from difflib import SequenceMatcher as SM
+from fuzzywuzzy import fuzz
 
 load_dotenv()
 
@@ -29,9 +31,11 @@ def getContent():
 
 app = Flask(__name__, static_url_path='/static')
 
+content = getContent()
 
 @app.route("/")
 def index():
+    global content
     content = getContent()
     total = sum([x['totalCommits'] for x in content])
     return render_template('content.html', context=content, totalC=total, search=False)
@@ -41,11 +45,9 @@ def index():
 def searchMember():
     query = request.args.get("query")
     # print(query)
-    content = getContent()
-
-    ratios = [ { "ratio" : SM(None, x['name'].lower(), query.lower()).ratio(), "data": x } for x in content ]
+    ratios = [ { "ratio" : fuzz.partial_ratio(x['name'].lower(), query.lower()), "data": x } for x in content ]
     
-    result = [ x['data'] for x in ratios if x['ratio'] > 0.4 ]
+    result = [ x['data'] for x in ratios if x['ratio'] > 60 ]
 
     found = len(result) != 0
     
