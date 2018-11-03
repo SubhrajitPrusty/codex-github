@@ -32,18 +32,24 @@ def getContent():
 app = Flask(__name__, static_url_path='/static')
 
 content = getContent()
+total = sum([x['totalCommits'] for x in content])
 
 @app.route("/")
 def index():
     global content
+    global total
     content = getContent()
     total = sum([x['totalCommits'] for x in content])
-    return render_template('content.html', context=content, totalC=total, search=False)
+    return render_template('index.html', context=content, totalC=total, search=False)
 
 
 @app.route("/search")
 def searchMember():
     query = request.args.get("query")
+
+    if query == "":
+        return render_template('search.html', context=content, search=True, found=True)
+
     # print(query)
     ratios = [ { "ratio" : fuzz.partial_ratio(x['name'].lower(), query.lower()), "data": x } for x in content ]
     
@@ -51,7 +57,7 @@ def searchMember():
 
     found = len(result) != 0
     
-    return render_template('content.html', context=result, search=True, found=found)
+    return render_template('search.html', context=result, search=True, found=found)
 
 
 if __name__ == '__main__':
