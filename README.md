@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:---------------:|
+| Kreeti Singh | [Kreetisingh](https://github.com/Kreetisingh)
 | Subham Sinha | [sinhasubham](https://github.com/sinhasubham)
 | Sachiket Behera | [sachiket](https://github.com/sachiket)
 | Ritika Mandal | [Ritika432](https://github.com/Ritika432)
