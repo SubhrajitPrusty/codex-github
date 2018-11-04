@@ -53,7 +53,9 @@ def searchMember():
     # print(query)
     ratios = [ { "ratio" : fuzz.partial_ratio(x['name'].lower(), query.lower()), "data": x } for x in content ]
     
-    result = [ x['data'] for x in ratios if x['ratio'] > 60 ]
+    ratios = sorted(ratios, key=lambda k: k['ratio'])
+    
+    result = [ x['data'] for x in ratios if x['ratio'] > 60 ][::-1]
 
     found = len(result) != 0
     
