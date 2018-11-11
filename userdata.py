@@ -83,7 +83,6 @@ class Member():
 		if r.status_code == 202:
 			r = requests.get(STATS_URL, params=payload)
 		# print(r)
-		# print(r.text)
 
 		if r.status_code == 403:
 			print("RATE LIMITED")
@@ -95,9 +94,10 @@ class Member():
 		stats = json.loads(r.text)
 		total = [0]
 		for st in stats:
-			if st['author']['login'].lower() == self.username.lower():
-				total.append(int(st['total']))
-				break
+			if st['author']:
+				if st['author']['login'].lower() == self.username.lower():
+					total.append(int(st['total']))
+					break
 
 		if sum(total) != 0:
 			return sum(total)
