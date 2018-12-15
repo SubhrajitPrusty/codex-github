@@ -80,7 +80,7 @@ Contributions of Codex members on Github
 | Sidharth | [xlreon](https://github.com/xlreon)
 | Ayush Mishra | [hsuay](https://github.com/hsuay)
 | Subhasish Sahu | [subhasish210](https://github.com/subhasish210)
-| Madhaba Patra | [MadhabaPatra] (https://github.com/MadhabaPatra)
+| Madhaba Patra | [MadhabaPatra](https://github.com/MadhabaPatra)
 
 # Screenshots
 
