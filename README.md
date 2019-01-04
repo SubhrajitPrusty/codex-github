@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:---------------:|
+| Harshita Raj | [Harshita248](https://github.com/Harshita248)
 | kajal kumari | [kajalkumaribps](https://github.com/kajalkumaribps)
 | Subham Sagar Paira | [subhamsagar524](https://github.com/subhamsagar524)
 | Kreeti Singh | [Kreetisingh](https://github.com/Kreetisingh)
