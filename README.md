@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:---------------:|
+| Shubham Kesri |.[kesrishubham2510](https://github.com/kesrishubham2510) 
 |Sandip Nayak|   [SandipNayak](https://github.com/SandipNayak)
 |Madhaba Patra|[MadhabaPatra](https://github.com/MadhabaPatra)
 | Harshita Raj | [Harshita248](https://github.com/Harshita248)
@@ -86,6 +87,7 @@ Contributions of Codex members on Github
 | Ayush Mishra | [hsuay](https://github.com/hsuay)
 | Subhasish Sahu | [subhasish210](https://github.com/subhasish210)
 | Adarsh Padhi | [adarsh1405](https://github.com/adarsh1405)
+| Sweta Sahoo | [sweta_sahoo](https://github.com/swetasahoo29)
 
 
 # Screenshots
