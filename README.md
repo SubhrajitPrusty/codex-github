@@ -86,7 +86,9 @@ Contributions of Codex members on Github
 | Sidharth | [xlreon](https://github.com/xlreon)
 | Ayush Mishra | [hsuay](https://github.com/hsuay)
 | Subhasish Sahu | [subhasish210](https://github.com/subhasish210)
+| Adarsh Padhi | [adarsh1405](https://github.com/adarsh1405)
 | Sweta Sahoo | [sweta_sahoo](https://github.com/swetasahoo29)
+
 
 # Screenshots
 
