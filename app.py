@@ -5,7 +5,6 @@ from flask import Flask, url_for, render_template, request
 from gevent.pywsgi import WSGIServer
 from pymongo import MongoClient
 from dotenv import load_dotenv
-from difflib import SequenceMatcher as SM
 from fuzzywuzzy import fuzz
 
 load_dotenv()
