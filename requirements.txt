@@ -1,5 +1,3 @@
-psycopg2
-bs4
 requests
 gevent
 Flask
