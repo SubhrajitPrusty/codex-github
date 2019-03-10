@@ -61,13 +61,18 @@ class Member():
 			self.following = userdata['following']
 
 			payload['per_page'] = 100
+			page_count = self.nRepos//100			
 
-			r = requests.get(self.REPOS_URL, params=payload)
-			# print(r)
-			print(r, f"FETCHING {self.REPOS_URL}")
-			rep = json.loads(r.text)
-			for rs in rep:
-				self.repos.append(rs['name'])
+			for i in range(1,page_count+1):
+				payload['page'] = 1
+				r = requests.get(self.REPOS_URL, params=payload)
+
+				# print(r)
+				print(r, f"FETCHING {self.REPOS_URL}")
+
+				rep = r.json()
+				for rs in rep:
+					self.repos.append(rs['name'])
 
 		return self.avatar, self.name, self.REPOS_URL, self.repos, self.nRepos
 
