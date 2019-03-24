@@ -91,6 +91,7 @@ Contributions of Codex members on Github
 | Subhasish Sahu | [subhasish210](https://github.com/subhasish210)
 | Adarsh Padhi | [adarsh1405](https://github.com/adarsh1405)
 | Sweta Sahoo | [swetasahoo29](https://github.com/swetasahoo29)
+| Swastik Preetam Dash | [dashPreetam](https://github.com/dashPreetam)
 
 
 # Screenshots
