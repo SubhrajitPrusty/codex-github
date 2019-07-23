@@ -50,7 +50,8 @@ def searchMember():
         return render_template('search.html', context=content, search=True, found=True)
 
     # print(query)
-    ratios = [ { "ratio" : fuzz.partial_ratio(x['name'].lower(), query.lower()), "data": x } for x in content ]
+    sanitize = lambda x: x.lower() if x else " "
+    ratios = [ { "ratio" : fuzz.partial_ratio(sanitize(x['name']), query.lower()), "data": x } for x in content ]
     
     ratios = sorted(ratios, key=lambda k: k['ratio'])
     
