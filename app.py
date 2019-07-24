@@ -51,7 +51,7 @@ def searchMember():
 
     # print(query)
     sanitize = lambda x: x.lower() if x else " "
-    ratios = [ { "ratio" : fuzz.partial_ratio(sanitize(x['name']), query.lower()), "data": x } for x in content ]
+    ratios = [ { "ratio" : max([fuzz.partial_ratio(sanitize(x['name']), query.lower()), fuzz.partial_ratio(sanitize(x['username']), query.lower())]), "data": x } for x in content ]
     
     ratios = sorted(ratios, key=lambda k: k['ratio'])
     
