@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+|Ayush Kejariwal| [KejariwalAyush](https://github.com/KejariwalAyush)
 |Sahil Agarwal| [agarwalsahil0210](https://github.com/agarwalsahil0210)
 |Jyoti Jayadeep | [obli99](https://github.com/obli99)
 |Pritam Kar | [pikaz143](https://github.com/pikaz143)
