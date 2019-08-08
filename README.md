@@ -97,6 +97,7 @@ Contributions of Codex members on Github
 | Sweta Sahoo | [swetasahoo29](https://github.com/swetasahoo29)
 | Swastik Preetam Dash | [dashPreetam](https://github.com/dashPreetam)
 | Sanket Kumar Nayak | [SanketKN](https://github.com/SanketKN)
+| Suvojit Barick | [SuvojitBarick](https://github.com/SuvojitBarick)
 
 
 # Screenshots
