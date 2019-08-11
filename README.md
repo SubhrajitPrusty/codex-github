@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+| Gyanaranjan Sahoo | [TheSpeedX](https://github.com/TheSpeedX)
 |Nishant Choudhary| [nishantc7](https://github.com/nishantc7)
 |Ayush Kejariwal| [KejariwalAyush](https://github.com/KejariwalAyush)
 |Sahil Agarwal| [agarwalsahil0210](https://github.com/agarwalsahil0210)
