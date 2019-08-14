@@ -99,7 +99,7 @@ Contributions of Codex members on Github
 | Swastik Preetam Dash | [dashPreetam](https://github.com/dashPreetam)
 | Sanket Kumar Nayak | [SanketKN](https://github.com/SanketKN)
 | Suvojit Barick | [SuvojitBarick](https://github.com/SuvojitBarick)
-
+| Satyapragyan Das| [SatyapragyanDas](https://github.com/SatyapragyanDas)
 
 # Screenshots
 
