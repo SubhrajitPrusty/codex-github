@@ -101,6 +101,7 @@ Contributions of Codex members on Github
 | Suvojit Barick | [SuvojitBarick](https://github.com/SuvojitBarick)
 | Satyapragyan Das| [SatyapragyanDas](https://github.com/SatyapragyanDas)
 | Abhishek Kumar| [iamAbhishekkumar](https://github.com/iamAbhishekkumar)
+| Sayantan Paul | [belikesayantan](https://github.com/belikesayantan)
 # Screenshots
 
 ![](./screenshot.png)
