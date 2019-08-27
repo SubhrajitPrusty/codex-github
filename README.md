@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+| Sudeep Swain | [Sudeep25022000](https://github.com/Sudeep25022000)
 | Gyanaranjan Sahoo | [TheSpeedX](https://github.com/TheSpeedX)
 |Nishant Choudhary| [nishantc7](https://github.com/nishantc7)
 |Ayush Kejariwal| [KejariwalAyush](https://github.com/KejariwalAyush)
@@ -101,7 +102,9 @@ Contributions of Codex members on Github
 | Suvojit Barick | [SuvojitBarick](https://github.com/SuvojitBarick)
 | Satyapragyan Das| [SatyapragyanDas](https://github.com/SatyapragyanDas)
 | Abhishek Kumar| [iamAbhishekkumar](https://github.com/iamAbhishekkumar)
+| Rijul Das | [RIJULDAS](https://github.com/RIJULDAS)
 | Pratik Sonal | [PratikSonal](https://github.com/PratikSonal)
+
 # Screenshots
 
 ![](./screenshot.png)
