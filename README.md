@@ -105,7 +105,7 @@ Contributions of Codex members on Github
 | Abhishek Kumar| [iamAbhishekkumar](https://github.com/iamAbhishekkumar)
 | Rijul Das | [RIJULDAS](https://github.com/RIJULDAS)
 | Pratik Sonal | [PratikSonal](https://github.com/PratikSonal)
-
+| Sayantan Paul | [belikesayantan](https://github.com/belikesayantan)
 # Screenshots
 
 ![](./screenshot.png)
