@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+| Subhransu Dash | [Ashis-007](https://github.com/Ashis-007)
 | A S V K VINAYAK |[ASVKVINAYAK](https://github.com/ASVKVINAYAK)
 | Tapas Sahu | [Tapas14102000]https://github.com/Tapas14102000)
 | Avinaba Ray | [avinabaray](https://github.com/avinabaray)
