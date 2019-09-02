@@ -10,7 +10,7 @@ html {
 /* line 19, /usr/local/rvm/gems/ruby-2.2.4/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_normalize.scss */
 body {
   margin: 0;
-  color: rgb(8, 8, 8);
+  background-color: rgb(8, 8, 8);
 }
 
 #main-logo
