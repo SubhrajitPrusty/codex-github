@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+| Subhankar Biswal | [Subh2410](https://GitHub.com/Subh2410)
 | Saniya Ahuja | [saniya3](https://github.com/saniya3)
 | Hritesh Pramanik | [Hritesh007](https://github.com/Hritesh007)
 | Sourav Bera | [SouravBera8850](https://github.com/SouravBear8850)
