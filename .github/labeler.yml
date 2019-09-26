@@ -1,9 +1,9 @@
-README UPDATED:
+documentation:
 - README.md
 
-USER ADDED .5:
+users.json:
 - static/users.json
 
-USER ADDED:
+new user:
 - README.md
 - static/users.json
