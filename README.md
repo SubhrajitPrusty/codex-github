@@ -72,7 +72,6 @@ Contributions of Codex members on Github
 | Subham Sinha | [sinhasubham](https://github.com/sinhasubham)
 | Sachiket Behera | [sachiket](https://github.com/sachiket)
 | Ritika Mandal | [Ritika432](https://github.com/Ritika432)
-| Akshay | [akki031197](https://github.com/akki031197)
 | Jashaswee Jena| [jashasweejena](https://github.com/jashasweejena)
 | Salif Moin | [salif-04](https://github.com/salif-04)
 | Parag Bhattacharjee | [PsychoBoy5](https://github.com/PsychoBoy5)
