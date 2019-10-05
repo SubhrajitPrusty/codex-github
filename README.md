@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+| Chinmaya Priyadarshan Sethi | [ChinmayaSethi720](https://github.com/ChinmayaSethi720)
 | Saniya Ahuja | [saniya3](https://github.com/saniya3)
 | Hritesh Pramanik | [Hritesh007](https://github.com/Hritesh007)
 | Sourav Bera | [SouravBera8850](https://github.com/SouravBear8850)
