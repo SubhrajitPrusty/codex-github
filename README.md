@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+| Tarique Nasar | [NasarTarique](https://github.com/NasarTarique)
 | Jyotiraditya Prasad Dash | [JyotiradityaPrDash](https://github.com/JyotiradityaPrDash)
 | Chinmaya Priyadarshan Sethi | [ChinmayaSethi720](https://github.com/ChinmayaSethi720)
 | Saniya Ahuja | [saniya3](https://github.com/saniya3)
