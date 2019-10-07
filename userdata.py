@@ -78,6 +78,8 @@ class Member():
 			return self.avatar, self.name, self.REPOS_URL, self.repos, self.nRepos
 		except NameError:
 			print("User not found")
+		except Exception:
+			print("User not found")
 
 	def getRepoData(self, repo):
 		payload = {

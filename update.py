@@ -61,3 +61,5 @@ try:
 		print(mem)
 except ConnectionError:
 	print("Could not connect to database")
+except PyMongoError:
+	print("Could not connect to database")
