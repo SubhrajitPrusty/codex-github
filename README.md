@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+| Chinmaya Priyadarshan Sethi | [ChinmayaSethi720](https://github.com/ChinmayaSethi720)
 | Saniya Ahuja | [saniya3](https://github.com/saniya3)
 | Hritesh Pramanik | [Hritesh007](https://github.com/Hritesh007)
 | Sourav Bera | [SouravBera8850](https://github.com/SouravBear8850)
@@ -72,7 +73,6 @@ Contributions of Codex members on Github
 | Subham Sinha | [sinhasubham](https://github.com/sinhasubham)
 | Sachiket Behera | [sachiket](https://github.com/sachiket)
 | Ritika Mandal | [Ritika432](https://github.com/Ritika432)
-| Akshay | [akki031197](https://github.com/akki031197)
 | Jashaswee Jena| [jashasweejena](https://github.com/jashasweejena)
 | Salif Moin | [salif-04](https://github.com/salif-04)
 | Parag Bhattacharjee | [PsychoBoy5](https://github.com/PsychoBoy5)
@@ -83,11 +83,9 @@ Contributions of Codex members on Github
 | Kumar Arunav | [KumarArunav](https://github.com/KumarArunav)
 | Dipannita Mahata | [dipu-m18](https://github.com/dipu-m18)
 | Shikha Singh | [SHIKHASINGH1506](https://github.com/SHIKHASINGH1506)
-| Anish Kumar Yadav | [anish-yadav](https://github.com/anish-yadav)
 | Swagat Parija | [swagat5147](https://github.com/swagat5147)
 | Mohit Agarwal | [mojito9542](https://github.com/mojito9542)
 | MD Azmal | [MD-AZMAL](https://github.com/MD-AZMAL)
-| Ankit Prasad | [Ankit289Prasad](https://github.com/Ankit289Prasad)
 | Aruba Shireen | [aruba246](https://github.com/aruba246)
 | Ashis Padhi |	[AshisPadhi](https://github.com/AshisPadhi)
 | Pawan Kumar | [Pawan0411](https://github.com/Pawan0411)
