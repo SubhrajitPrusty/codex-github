@@ -46,6 +46,7 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
+| Jyotiraditya Prasad Dash | [JyotiradityaPrDash](https://github.com/JyotiradityaPrDash)
 | Chinmaya Priyadarshan Sethi | [ChinmayaSethi720](https://github.com/ChinmayaSethi720)
 | Saniya Ahuja | [saniya3](https://github.com/saniya3)
 | Hritesh Pramanik | [Hritesh007](https://github.com/Hritesh007)
