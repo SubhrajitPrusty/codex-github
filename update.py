@@ -61,5 +61,8 @@ try:
 		print(mem)
 except ConnectionError:
 	print("Could not connect to database")
-except PyMongoError:
-	print("Could not connect to database")
+except Exception as e:
+	if type(e).__name__=='PyMongoError':
+		print("Could not connect to database")
+	else:
+		print("Error: ", e)
