@@ -57,6 +57,13 @@ try:
 				},
 				upsert=False)
 
+	db_usernames = [x['username'] for x in members.find()]
+
+	for u in db_usernames:
+		reg = re.compile(u, re.IGNORECASE)
+		if not any([reg.match(x) for x in usernames]):
+			members.remove_one({"username" : u})
+
 	for mem in members.find():
 		print(mem)
 except ConnectionError:
