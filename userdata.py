@@ -51,6 +51,8 @@ class Member():
 
 			if r.status_code == 404:
 				raise NameError
+			elif r.status_code == 403:
+				raise Exception("Rate limit exceeded")
 			else:
 				userdata = json.loads(r.text)
 				self.avatar = userdata['avatar_url']
@@ -68,12 +70,16 @@ class Member():
 					payload['page'] = i
 					r = requests.get(self.REPOS_URL, params=payload)
 
-					print(r, f"FETCHING {self.REPOS_URL}")
+					if r.status_code == 200:
+						print(r, f"FETCHING {self.REPOS_URL}")
 
-					rep = r.json()
-					for rs in rep:
-						print(rs['name'])
-						self.repos.append(rs['name'])
+						rep = r.json()
+						for rs in rep:
+							print(rs['name'])
+							self.repos.append(rs['name'])
+					else:
+						print(r.reason)
+						break
 
 			return self.avatar, self.name, self.REPOS_URL, self.repos, self.nRepos
 		except NameError:

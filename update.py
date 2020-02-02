@@ -18,54 +18,41 @@ try:
 
 	users_json = os.path.join("static", "users.json")
 
-	with open(users_json, "r+") as usernames:
-		usernames = json.loads(usernames.read())
+	with open(users_json, "r+") as user_file:
+		usernames = json.loads(user_file.read())
 		
-		# insert if not present
+		# update db and insert if not present
 		for u in usernames:
-			if members.count_documents({"username": re.compile(u, re.IGNORECASE)}) == 0:
-				members.insert_one({"username": u})
+			if members.count_documents({"username": re.compile(u, re.IGNORECASE)}) >= 0:
 				m = Member(u)
 				m.fetch()
-				del m
+				# m.printData()
+				ud = {
+					"name": m.name,
+					"username": m.username,
+					"avatar": m.avatar,
+					"bio": m.bio,
+					"nRepos": m.nRepos,
+					"followers": m.followers,
+					"following": m.following,
+					"totalCommits": m.totalCommits
+				}
 
-		# update db
-		for u in usernames:
-			m = Member(u)
-			m.fetch()
-			# m.printData()
-			ud = {
-				"name": m.name,
-				"username": m.username,
-				"avatar": m.avatar,
-				"bio": m.bio,
-				"nRepos": m.nRepos,
-				"followers": m.followers,
-				"following": m.following,
-				"totalCommits": m.totalCommits
-			}
-
-			if None in ud.values():
-				m.fetch()
-
-			members.update_one(
-				{
-					"username": ud["username"]
-				},
-				{
-					"$set": ud
-				},
-				upsert=False)
+				members.update_one({ "username": ud["username"]},
+									{"$set": ud},
+									upsert=True)
 
 	db_usernames = [x['username'] for x in members.find()]
 
 	for u in db_usernames:
 		reg = re.compile(u, re.IGNORECASE)
 		if not any([reg.match(x) for x in usernames]):
-			members.remove_one({"username" : u})
+			members.delete_one({"username" : u})
+			print(f"Removed {u}")
 
 	for mem in members.find():
 		print(mem)
+		
 except ConnectionError:
 	print("Could not connect to database")
 except Exception as e:
