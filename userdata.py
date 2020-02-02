@@ -56,7 +56,7 @@ class Member():
 			else:
 				userdata = json.loads(r.text)
 				self.avatar = userdata['avatar_url']
-				self.name = userdata['name']
+				self.name = userdata['name'] if userdata['name'] is not None else ""
 				self.REPOS_URL = userdata['repos_url']
 				self.nRepos = userdata['public_repos']
 				self.bio = userdata['bio']
