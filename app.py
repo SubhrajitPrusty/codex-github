@@ -1,10 +1,13 @@
 import os
 import json
-from flask import Flask, url_for, render_template, request
-from gevent.pywsgi import WSGIServer
-from pymongo import MongoClient
-from dotenv import load_dotenv
+from gevent import monkey
+monkey.patch_all()
+
 from fuzzywuzzy import fuzz
+from dotenv import load_dotenv
+from pymongo import MongoClient
+from gevent.pywsgi import WSGIServer
+from flask import Flask, url_for, render_template, request
 
 load_dotenv()
 
@@ -13,6 +16,8 @@ dburl = os.environ.get('MONGODB_URI')
 client = MongoClient(dburl)
 db = client.get_default_database()
 members = db.members
+
+app = Flask(__name__, static_url_path='/static')
 
 def getContent():
     data = []
@@ -23,12 +28,6 @@ def getContent():
     data = sorted(data, key=lambda k: k['totalCommits'])
 
     return data[::-1]
-
-
-app = Flask(__name__, static_url_path='/static')
-
-content = getContent()
-total = sum([x['totalCommits'] for x in content])
 
 @app.route("/")
 def index():
@@ -76,7 +75,7 @@ def profile(username):
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    http_server = WSGIServer(('', port), app)
+    http_server = WSGIServer(('', port), app.wsgi_app)
     print("Server ready:")
     try:
         http_server.serve_forever()
