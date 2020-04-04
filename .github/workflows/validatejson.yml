@@ -23,10 +23,8 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Validate JSON
-      uses: OrRosenblatt/validate-json-action@0.1.0
-      with:
-        # Relative file path under the repository of a JSON schema file to validate the other JSON files with.
-      schema: # default is ./schema.json
-        # One or more relative file paths under the repository (seperated by comma) of the JSON files to validate with the schema provided.
-        json: ./static/users.json
+    - name: Install jq
+      run: sudo apt install -y jq
+    
+    - name: Check json
+      run: jq static/users.json .
