@@ -27,4 +27,4 @@ jobs:
       run: sudo apt install -y jq
     
     - name: Check json
-      run: jq static/users.json .
+      run: cat ./static/users.json | jq .
