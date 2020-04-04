@@ -1,14 +1,19 @@
-import requests
-import json
-import sys
 import os
+import sys
+import json
+import requests
+from loguru import logger
 from dotenv import load_dotenv
+from logentries import LogentriesHandler
 
 load_dotenv()
 
 cid = os.environ.get('CLIENT_ID')
 csecret = os.environ.get('CLIENT_SECRET')
+LOGENTRIES_TOKEN = os.environ.get('LOGENTRIES_TOKEN')
 
+LH = LogentriesHandler(LOGENTRIES_TOKEN)
+logger.add(LH, level='DEBUG', format='{name}:{function}:{line} - {message}')
 
 class Member():
 
@@ -29,15 +34,16 @@ class Member():
 		self.getAllCommits()
 
 	def printData(self):
-		print("Name :", self.name)
-		print("Username :", self.username)
-		print("Avatar :", self.avatar)
-		print("Bio :", self.bio)
-		print("Public Repos :", self.nRepos)
-		print("Followers :", self.followers)
-		print("Following :", self.following)
-		print("Total Commits :", self.totalCommits)
+		logger.debug("Name :", self.name)
+		logger.debug("Username :", self.username)
+		logger.debug("Avatar :", self.avatar)
+		logger.debug("Bio :", self.bio)
+		logger.debug("Public Repos :", self.nRepos)
+		logger.debug("Followers :", self.followers)
+		logger.debug("Following :", self.following)
+		logger.debug("Total Commits :", self.totalCommits)
 
+	@logger.catch
 	def getUser(self):
 		try:
 			payload = {
@@ -47,7 +53,7 @@ class Member():
 
 			USER_API = "https://api.github.com/users/{}".format(self.username)
 			r = requests.get(USER_API, params=payload)
-			print(r, f"FETCHING {self.username}", USER_API)
+			logger.debug(f"{r} FETCHED {self.username} {USER_API}")
 
 			if r.status_code == 404:
 				raise NameError
@@ -71,22 +77,25 @@ class Member():
 					r = requests.get(self.REPOS_URL, params=payload)
 
 					if r.status_code == 200:
-						print(r, f"FETCHING {self.REPOS_URL}")
+						logger.debug(f"{r} FETCHING {self.REPOS_URL}")
 
 						rep = r.json()
 						for rs in rep:
-							print(rs['name'])
+							# logger.debug(rs['name'])
 							self.repos.append(rs['name'])
 					else:
-						print(r.reason)
+						logger.error(f'Request failed {r.reason}')
 						break
 
-			return self.avatar, self.name, self.REPOS_URL, self.repos, self.nRepos
+			self.nRepos = len(self.repos)
+			logger.debug(f"no of repos : {len(self.repos)}")
 		except NameError:
-			print("User not found")
+			logger.error("User not found")
 		except Exception as e:
-			print("Error: ", e)
+			logger.error("Error: ", e)
+			raise e
 
+	@logger.catch
 	def getRepoData(self, repo):
 		payload = {
 			"client_id": cid,
@@ -97,17 +106,19 @@ class Member():
 
 		r = requests.get(STATS_URL, params=payload)
 		if r.status_code == 202:
+			logger.debug(f'Request redirected, retrying: {STATS_URL}')
 			r = requests.get(STATS_URL, params=payload)
-		# print(r)
+		# logger.debug(r)
 
 		if r.status_code == 403:
-			print("RATE LIMITED")
+			logger.error("RATE LIMITED")
 			sys.exit(1)
 
 		if len(r.text) == 0:
-			return -1
+			logger.error(f'No response {STATS_URL}')
+			return 0
 
-		stats = json.loads(r.text)
+		stats = r.json()
 		total = [0]
 		for st in stats:
 			if st['author']:
@@ -115,20 +126,12 @@ class Member():
 					total.append(int(st['total']))
 					break
 
+		logger.debug(total)
 		if sum(total) != 0:
 			return sum(total)
 		else:
-			return -1
+			return 0
 
 	def getAllCommits(self):
-		totalCont = [0]
-		for rs in self.repos:
-			c = self.getRepoData(rs)
-			if c != -1:
-				totalCont.append(c)
+		totalCont = [self.getRepoData(repo) for repo in self.repos]
 		self.totalCommits = sum(totalCont)
-
-		if self.totalCommits != 0:
-			return self.totalCommits
-		else:
-			return -1
