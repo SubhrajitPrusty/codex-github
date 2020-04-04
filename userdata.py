@@ -39,42 +39,53 @@ class Member():
 		print("Total Commits :", self.totalCommits)
 
 	def getUser(self):
-		payload = {
-			"client_id": cid,
-			"client_secret": csecret
-		}
+		try:
+			payload = {
+				"client_id": cid,
+				"client_secret": csecret
+			}
 
-		USER_API = "https://api.github.com/users/{}".format(self.username)
-		r = requests.get(USER_API, params=payload)
-		print(r, f"FETCHING {self.username}", USER_API)
+			USER_API = "https://api.github.com/users/{}".format(self.username)
+			r = requests.get(USER_API, params=payload)
+			print(r, f"FETCHING {self.username}", USER_API)
 
-		if r.status_code == 404:
-			print("USER NOT FOUND. CHECK LIST")
-		else:
-			userdata = json.loads(r.text)
-			self.avatar = userdata['avatar_url']
-			self.name = userdata['name']
-			self.REPOS_URL = userdata['repos_url']
-			self.nRepos = userdata['public_repos']
-			self.bio = userdata['bio']
-			self.followers = userdata['followers']
-			self.following = userdata['following']
+			if r.status_code == 404:
+				raise NameError
+			elif r.status_code == 403:
+				raise Exception("Rate limit exceeded")
+			else:
+				userdata = json.loads(r.text)
+				self.avatar = userdata['avatar_url']
+				self.name = userdata['name'] if userdata['name'] is not None else ""
+				self.REPOS_URL = userdata['repos_url']
+				self.nRepos = userdata['public_repos']
+				self.bio = userdata['bio']
+				self.followers = userdata['followers']
+				self.following = userdata['following']
 
-			payload['per_page'] = 100
-			page_count = (self.nRepos//100) + 1	
+				payload['per_page'] = 100
+				page_count = (self.nRepos//100) + 1	
 
-			for i in range(1,page_count+1):
-				payload['page'] = i
-				r = requests.get(self.REPOS_URL, params=payload)
+				for i in range(1,page_count+1):
+					payload['page'] = i
+					r = requests.get(self.REPOS_URL, params=payload)
 
-				print(r, f"FETCHING {self.REPOS_URL}")
+					if r.status_code == 200:
+						print(r, f"FETCHING {self.REPOS_URL}")
 
-				rep = r.json()
-				for rs in rep:
-					print(rs['name'])
-					self.repos.append(rs['name'])
+						rep = r.json()
+						for rs in rep:
+							print(rs['name'])
+							self.repos.append(rs['name'])
+					else:
+						print(r.reason)
+						break
 
-		return self.avatar, self.name, self.REPOS_URL, self.repos, self.nRepos
+			return self.avatar, self.name, self.REPOS_URL, self.repos, self.nRepos
+		except NameError:
+			print("User not found")
+		except Exception as e:
+			print("Error: ", e)
 
 	def getRepoData(self, repo):
 		payload = {

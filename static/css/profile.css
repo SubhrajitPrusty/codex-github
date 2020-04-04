@@ -1,0 +1,43 @@
+html, body
+{
+	height: 100%; /*Fixes the height to 100% of the viewport */
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-image: url("../images/wallgen.png");	
+}
+
+body
+{
+	padding-top: 70px;
+}
+
+.card
+{
+	border: 1px solid rgba(0,0,0, 0.5);;
+}
+
+.card-header
+{
+	background: #66717e;
+	color: #f4f4f9;
+}
+
+.card-body
+{
+	background: #b6c2d9;
+}
+
+.navbar
+{
+	background-color: #2C3E50;
+}
+
+.list-group-item
+{
+	background: inherit;
+}
+
+.card-img
+{
+  align-self: center;
+  max-width: 250px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Codex</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css' ) }}">
+	<link rel="icon" type="image/png" href="static/images/logo.png">
+	
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+			<a id="logo" class="navbar-brand ml-5" href="https://github.com/codexiter">CODEX</a>	
+		</nav>
+	</div>
+	<div class="profile container mt-1">
+		<div class="card text-center mb-3" id="profile">
+			<div class="card-header">
+				<p class="h3 font-weight-bold">{{ user.name }}</p>
+			</div>
+
+			<div class="card-body">
+				<div class="container">					
+					<div class="card-title">
+						<img src="{{ user.avatar }}" alt="" class="card-img">
+					</div>
+					<p class="card-text"><small class="text-muted">{{ user.bio }}</small></p>
+					<a class="card-link" href="https://github.com/{{ user.username }}">
+						<p class="h5 mt-1">{{ user.username }}</p>
+					</a>
+				</div>
+				<div class="container m-1">
+					<button class="btn btn-dark">
+						Total Commits <span class="badge">{{ user.totalCommits }}</span>
+					</button>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						<!-- &nbsp; -->
+					</li>
+					<li class="list-group-item">
+						<a href="https://github.com/{{ user.username }}?tab=repositories">
+							<button class="btn btn-dark">
+								Repositories <span class="badge">{{ user.nRepos }}</span>
+							</button>
+						</a>
+					</li>
+
+					<li class="list-group-item">
+
+						<a href="https://github.com/{{ user.username }}/followers">
+							<button class="btn btn-dark">
+								Followers <span class="badge">{{ user.followers }}</span>
+							</button>
+						</a>
+						<!-- </li><li class="list-group-item"> -->
+							<a href="https://github.com/{{ user.username }}/following">
+								<button class="btn btn-dark">
+									Following <span class="badge">{{ user.following }}</span>
+								</button>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>

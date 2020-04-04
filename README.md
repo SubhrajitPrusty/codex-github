@@ -1,4 +1,4 @@
-# codex-github [![](https://img.shields.io/badge/codex-github-blue.svg?style=for-the-badge&display=inline-block)](http://codex.subhrajitpy.me)
+# codex-github [![](https://img.shields.io/badge/codex-github-blue.svg?style=for-the-badge&display=inline-block)](http://codex-github.herokuapp.com)
 Contributions of Codex members on Github 
 
 # Resources Used
@@ -46,7 +46,8 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
-| Tarique Nasar | [NasarTarique](https://github.com/NasarTarique)
+|Shivangi Bose | [Shivangibose](https://github.com/Shivangibose)
+|Tarique Nasar| [NasarTarique](https://github.com/NasarTarique)
 | Jyotiraditya Prasad Dash | [JyotiradityaPrDash](https://github.com/JyotiradityaPrDash)
 | Chinmaya Priyadarshan Sethi | [ChinmayaSethi720](https://github.com/ChinmayaSethi720)
 | Saniya Ahuja | [saniya3](https://github.com/saniya3)
