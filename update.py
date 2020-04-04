@@ -1,22 +1,21 @@
-import requests
-import json
+import re
 import os
 import sys
-from pymongo import MongoClient
-from userdata import Member
-import re
+import json
+import requests
+from userdata import *
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
-load_dotenv()
+load_dotenv() # only on local
 dburl = os.environ.get("MONGODB_URI")
+users_json = os.path.join("static", "users.json")
 
 try:
 	client = MongoClient(dburl, retryWrites=False)
 	db = client.get_default_database()
 
 	members = db.members
-
-	users_json = os.path.join("static", "users.json")
 
 	with open(users_json, "r+") as user_file:
 		usernames = json.loads(user_file.read())
@@ -48,15 +47,15 @@ try:
 		reg = re.compile(u, re.IGNORECASE)
 		if not any([reg.match(x) for x in usernames]):
 			members.delete_one({"username" : u})
-			print(f"Removed {u}")
+			logger.debug(f"Removed {u}")
 
 	for mem in members.find():
-		print(mem)
+		logger.debug(mem)
 		
 except ConnectionError:
-	print("Could not connect to database")
+	logger.error("Could not connect to database")
 except Exception as e:
 	if type(e).__name__=='PyMongoError':
-		print("Could not connect to database")
+		logger.error("Could not connect to database")
 	else:
-		print("Error: ", e)
+		logger.error("Error: ", e)
