@@ -1,4 +1,4 @@
-# codex-github [![](https://img.shields.io/badge/codex-github-blue.svg?style=for-the-badge&display=inline-block)](http://codex.subhrajitpy.me)
+# codex-github [![](https://img.shields.io/badge/codex-github-blue.svg?style=for-the-badge&display=inline-block)](http://codex-github.herokuapp.com)
 Contributions of Codex members on Github 
 
 # Resources Used
@@ -46,7 +46,8 @@ Contributions of Codex members on Github
 
 | Name | Github Username |
 |:------|:----------------:|
-| Tarique Nasar | [NasarTarique](https://github.com/NasarTarique)
+|Shivangi Bose | [Shivangibose](https://github.com/Shivangibose)
+|Tarique Nasar| [NasarTarique](https://github.com/NasarTarique)
 | Jyotiraditya Prasad Dash | [JyotiradityaPrDash](https://github.com/JyotiradityaPrDash)
 | Chinmaya Priyadarshan Sethi | [ChinmayaSethi720](https://github.com/ChinmayaSethi720)
 | Saniya Ahuja | [saniya3](https://github.com/saniya3)
@@ -62,7 +63,7 @@ Contributions of Codex members on Github
 |Ayush Kejariwal| [KejariwalAyush](https://github.com/KejariwalAyush)
 |Sahil Agarwal| [agarwalsahil0210](https://github.com/agarwalsahil0210)
 |Jyoti Jayadeep | [obli99](https://github.com/obli99)
-|Pritam Kar | [pikaz143](https://github.com/pikaz143)
+|Pritam Kar | [pritam047](https://github.com/pritam047)
 |Shubham Kumar | [shubham171019](https://github.com/shubham171019)
 |Pranab Pradhan | [Pronoob911](https://github.com/Pronoob911)
 | Shubham Kesri |.[kesrishubham2510](https://github.com/kesrishubham2510) 

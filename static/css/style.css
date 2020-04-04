@@ -5,6 +5,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background-image: url("../images/wallgen.png");
 }
 
 /* line 19, /usr/local/rvm/gems/ruby-2.2.4/gems/bootstrap-sass-3.2.0.0/assets/stylesheets/bootstrap/_normalize.scss */
@@ -8061,7 +8062,7 @@ h1 {
   letter-spacing: 2px;
 }
 #member {
-  color:#2C3E50;
+  color: #f4f4f9;
   font-size: 40px;
   font-weight: lighter;
   letter-spacing: 2px;
@@ -8692,3 +8693,12 @@ Media Queries
 
  */
 
+#members
+{
+  margin-top: 50px;
+}
+
+.thumbnail
+{
+  background-color: #b6c2d9;
+}
