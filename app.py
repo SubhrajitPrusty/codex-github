@@ -13,7 +13,7 @@ load_dotenv()
 
 dburl = os.environ.get('MONGODB_URI')
 
-client = MongoClient(dburl)
+client = MongoClient(dburl, retryWrites=False)
 db = client.get_default_database()
 members = db.members
 
