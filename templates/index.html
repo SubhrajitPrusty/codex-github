@@ -53,9 +53,9 @@
 
 					{% for member in context %}
 					<div class="col-sm-1 col-md-3">
-						{% if context.index(member) == 0 and search == False %}
-						<img src="static/images/crown.png" alt="crown" style="max-width: 25%; position: absolute; margin-top: -15%; margin-left: 32.5%;">
-						{% endif %}
+						<!-- {% if context.index(member) == 0 and search == False %} -->
+						<!-- <img src="static/images/crown.png" alt="crown" style="max-width: 25%; position: absolute; margin-top: -15%; margin-left: 32.5%;"> -->
+						<!-- {% endif %} -->
 						<div class="thumbnail thumbnail-border fade">
 							<a href="/{{ member.username }}">
 								<img alt="Profile Picture" class="img-circle" src="{{ member.avatar }}">
