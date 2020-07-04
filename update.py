@@ -15,32 +15,34 @@ try:
 	db = client.get_default_database()
 
 	members = db.members
+	telegram = db.telegram_members
 
-	users_json = os.path.join("static", "users.json")
+	# users_json = os.path.join("static", "users.json")
 
-	with open(users_json, "r+") as user_file:
-		usernames = json.loads(user_file.read())
+	# with open(users_json, "r+") as user_file:
+		# usernames = json.loads(user_file.read())
+	usernames = [x['github_username'] for x in telegram.find()]
 		
-		# update db and insert if not present
-		for u in usernames:
-			if members.count_documents({"username": re.compile(u, re.IGNORECASE)}) >= 0:
-				m = Member(u)
-				m.fetch()
-				# m.printData()
-				ud = {
-					"name": m.name,
-					"username": m.username,
-					"avatar": m.avatar,
-					"bio": m.bio,
-					"nRepos": m.nRepos,
-					"followers": m.followers,
-					"following": m.following,
-					"totalCommits": m.totalCommits
-				}
+	# update db and insert if not present
+	for u in usernames:
+		if members.count_documents({"username": re.compile(u, re.IGNORECASE)}) >= 0:
+			m = Member(u)
+			m.fetch()
+			# m.printData()
+			ud = {
+				"name": m.name,
+				"username": m.username,
+				"avatar": m.avatar,
+				"bio": m.bio,
+				"nRepos": m.nRepos,
+				"followers": m.followers,
+				"following": m.following,
+				"totalCommits": m.totalCommits
+			}
 
-				members.update_one({ "username": ud["username"]},
-									{"$set": ud},
-									upsert=True)
+			members.update_one({ "username": ud["username"]},
+								{"$set": ud},
+								upsert=True)
 
 	db_usernames = [x['username'] for x in members.find()]
 
