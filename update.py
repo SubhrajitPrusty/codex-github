@@ -1,64 +1,62 @@
-import requests
-import json
 import os
-import sys
-from pymongo import MongoClient
-from userdata import Member
 import re
+from userdata import Member
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 load_dotenv()
 dburl = os.environ.get("MONGODB_URI")
 
 try:
-	client = MongoClient(dburl, retryWrites=False)
-	db = client.get_default_database()
+    client = MongoClient(dburl, retryWrites=False)
+    db = client.get_default_database()
 
-	members = db.members
-	telegram = db.telegram_members
+    members = db.members
+    telegram = db.telegram_members
 
-	# users_json = os.path.join("static", "users.json")
+    # users_json = os.path.join("static", "users.json")
 
-	# with open(users_json, "r+") as user_file:
-		# usernames = json.loads(user_file.read())
-	usernames = [x['github_username'] for x in telegram.find()]
-		
-	# update db and insert if not present
-	for u in usernames:
-		if members.count_documents({"username": re.compile(u, re.IGNORECASE)}) >= 0:
-			m = Member(u)
-			m.fetch()
-			# m.printData()
-			ud = {
-				"name": m.name,
-				"username": m.username,
-				"avatar": m.avatar,
-				"bio": m.bio,
-				"nRepos": m.nRepos,
-				"followers": m.followers,
-				"following": m.following,
-				"totalCommits": m.totalCommits
-			}
+    # with open(users_json, "r+") as user_file:
+    # usernames = json.loads(user_file.read())
+    usernames = [x['github_username'] for x in telegram.find()]
 
-			members.update_one({ "username": ud["username"]},
-								{"$set": ud},
-								upsert=True)
+    # update db and insert if not present
+    for u in usernames:
+        if members.count_documents(
+                {"username": re.compile(u, re.IGNORECASE)}) >= 0:
+            m = Member(u)
+            m.fetch()
+            # m.printData()
+            ud = {
+                "name": m.name,
+                "username": m.username,
+                "avatar": m.avatar,
+                "bio": m.bio,
+                "nRepos": m.nRepos,
+                "followers": m.followers,
+                "following": m.following,
+                "totalCommits": m.totalCommits
+            }
 
-	db_usernames = [x['username'] for x in members.find()]
+            members.update_one({"username": ud["username"]},
+                               {"$set": ud},
+                               upsert=True)
 
-	for u in db_usernames:
-		reg = re.compile(u, re.IGNORECASE)
-		if not any([reg.match(x) for x in usernames]):
-			members.delete_one({"username" : u})
-			print(f"Removed {u}")
+    db_usernames = [x['username'] for x in members.find()]
 
-	for mem in members.find():
-		print(mem)
-		
+    for u in db_usernames:
+        reg = re.compile(u, re.IGNORECASE)
+        if not any([reg.match(x) for x in usernames]):
+            members.delete_one({"username": u})
+            print(f"Removed {u}")
+
+    for mem in members.find():
+        print(mem)
+
 except ConnectionError:
-	print("Could not connect to database")
+    print("Could not connect to database")
 except Exception as e:
-	if type(e).__name__=='PyMongoError':
-		print("Could not connect to database")
-	else:
-		print("Error: ", e)
+    if type(e).__name__ == 'PyMongoError':
+        print("Could not connect to database")
+    else:
+        print("Error: ", e)
