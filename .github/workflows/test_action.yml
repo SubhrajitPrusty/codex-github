@@ -6,4 +6,13 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - run: flake8
+            - name: Clone repo
+              uses: actions/checkout@v2
+            - name: Setup python
+              uses: actions/setup-python@v2
+              with: 
+                python-version: '3.8'
+            - name: Install flake8
+              run: pip install flake8
+            - name: Check linting
+              run: flake8
