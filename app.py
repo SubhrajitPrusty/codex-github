@@ -9,7 +9,7 @@ monkey.patch_all()
 from pymongo import MongoClient  # noqa: E402
 load_dotenv()
 
-dburl = os.environ.get('MONGODB_URI')
+dburl = os.environ.get('DB_URI')
 
 client = MongoClient(dburl, retryWrites=False)
 db = client.get_default_database()

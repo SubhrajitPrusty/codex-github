@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 
 load_dotenv()
-dburl = os.environ.get("MONGODB_URI")
+dburl = os.environ.get("DB_URI")
 
 try:
     client = MongoClient(dburl, retryWrites=False)
