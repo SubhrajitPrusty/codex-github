@@ -3,7 +3,7 @@ from gevent import monkey
 from fuzzywuzzy import fuzz
 from dotenv import load_dotenv
 from gevent.pywsgi import WSGIServer
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 
 monkey.patch_all()
 from pymongo import MongoClient  # noqa: E402
@@ -15,7 +15,7 @@ client = MongoClient(dburl, retryWrites=False)
 db = client.get_default_database()
 members = db.members
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__, static_url_path='', static_folder="static")
 
 
 def getContent():
@@ -88,6 +88,10 @@ def profile(username):
     except Exception as e:
         print(e)
         raise e
+
+@app.route("/robots.txt")
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 if __name__ == '__main__':

@@ -6,8 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Codex</title>
-	<link rel="stylesheet" media="all" href="static/css/style.css" data-turbolinks-track="true">
-	<link rel="icon" type="image/png" href="static/images/logo.png">
+	<link rel="stylesheet" media="all" href="css/style.css" data-turbolinks-track="true">
+	<link rel="icon" type="image/png" href="images/logo.png">
 	
 
 </head>
@@ -26,7 +26,7 @@
 			<div class="container-fluid buffer-top">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<img alt="Codex logo" src="static/images/logo.png" class="img-responsive vertical-align" id="main-logo">
+						<img alt="Codex logo" src="images/logo.png" class="img-responsive vertical-align" id="main-logo">
 					</div>
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 					{% for member in context %}
 					<div class="col-sm-1 col-md-3">
 						<!-- {% if context.index(member) == 0 and search == False %} -->
-						<!-- <img src="static/images/crown.png" alt="crown" style="max-width: 25%; position: absolute; margin-top: -15%; margin-left: 32.5%;"> -->
+						<!-- <img src="images/crown.png" alt="crown" style="max-width: 25%; position: absolute; margin-top: -15%; margin-left: 32.5%;"> -->
 						<!-- {% endif %} -->
 						<div class="thumbnail thumbnail-border fade">
 							<a href="/{{ member.username }}">
@@ -105,7 +105,7 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>
-		window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery.min.js') }}">\x3C/script>')
+		window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')
 	</script>
 	<script>
 		$("input[name=query").keyup(function () {
