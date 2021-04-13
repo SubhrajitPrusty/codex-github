@@ -4,12 +4,18 @@ import json
 import requests
 from loguru import logger
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 load_dotenv()
 
 cid = os.environ.get('CLIENT_ID')
 csecret = os.environ.get('CLIENT_SECRET')
+dburl = os.environ.get("DB_URI")
 
+client = MongoClient(dburl, retryWrites=False)
+db = client.get_default_database()
+
+members = db.members
 
 class Member():
 
@@ -91,7 +97,8 @@ class Member():
                 self.nRepos
             )
         except NameError:
-            logger.error("User not found")
+            members.delete_one({"username": self.username})
+            logger.error(f"User not found {self.username}. Deleting user.")
         except Exception as e:
             logger.error(f"Error: {e}")
 
