@@ -1,5 +1,6 @@
 import os
 import re
+from loguru import logger
 from userdata import Member
 from dotenv import load_dotenv
 from pymongo import MongoClient
@@ -26,7 +27,6 @@ try:
                 {"username": re.compile(u, re.IGNORECASE)}) >= 0:
             m = Member(u)
             m.fetch()
-            # m.printData()
             ud = {
                 "name": m.name,
                 "username": m.username,
@@ -48,15 +48,16 @@ try:
         reg = re.compile(u, re.IGNORECASE)
         if not any([reg.match(x) for x in usernames]):
             members.delete_one({"username": u})
-            print(f"Removed {u}")
+            logger.debug(f"Removed {u}")
 
     for mem in members.find():
-        print(mem)
+        pass
+        # logger.debug(mem)
 
 except ConnectionError:
-    print("Could not connect to database")
+    logger.debug("Could not connect to database")
 except Exception as e:
     if type(e).__name__ == 'PyMongoError':
-        print("Could not connect to database")
+        logger.debug("Could not connect to database")
     else:
-        print("Error: ", e)
+        logger.debug("Error: ", e)

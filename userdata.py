@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import requests
+from loguru import logger
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -47,7 +48,7 @@ class Member():
 
             USER_API = "https://api.github.com/users/{}".format(self.username)
             r = requests.get(USER_API, params=payload)
-            print(r, f"FETCHING {self.username}", USER_API)
+            # logger.debug(r, f"FETCHING {self.username}", USER_API)
 
             if r.status_code == 404:
                 raise NameError
@@ -71,14 +72,15 @@ class Member():
                     r = requests.get(self.REPOS_URL, params=payload)
 
                     if r.status_code == 200:
-                        print(r, f"FETCHING {self.REPOS_URL}")
+                        # logger.debug(r, f"FETCHING {self.REPOS_URL}")
 
                         rep = r.json()
                         for rs in rep:
-                            print(rs['name'])
-                            self.repos.append(rs['name'])
+                            _repo_name = rs.get('name')
+                            if _repo_name is not None:
+                                self.repos.append(_repo_name)
                     else:
-                        print(r.reason)
+                        logger.debug(r.reason)
                         break
 
             return (
@@ -89,9 +91,9 @@ class Member():
                 self.nRepos
                 )
         except NameError:
-            print("User not found")
+            logger.error("User not found")
         except Exception as e:
-            print("Error: ", e)
+            logger.error(f"Error: {e}")
 
     def getRepoData(self, repo):
         payload = {
@@ -107,7 +109,7 @@ class Member():
         # print(r)
 
         if r.status_code == 403:
-            print("RATE LIMITED")
+            logger.error("RATE LIMITED")
             sys.exit(1)
 
         if len(r.text) == 0:

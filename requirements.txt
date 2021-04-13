@@ -5,3 +5,4 @@ pymongo
 python-dotenv
 fuzzywuzzy[speedup]
 dnspython 
+loguru
