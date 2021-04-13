@@ -17,6 +17,7 @@ db = client.get_default_database()
 
 members = db.members
 
+
 class Member():
 
     def __init__(self, u):

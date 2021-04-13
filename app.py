@@ -1,4 +1,5 @@
-import os  # noqa: E402
+import os
+from loguru import logger
 from gevent import monkey
 from fuzzywuzzy import fuzz
 from dotenv import load_dotenv
@@ -80,13 +81,12 @@ def searchMember():
 def profile(username):
     try:
         user_details = [x for x in members.find({"username": username})].pop()
-        print(user_details)
 
         return render_template("profile.html", user=user_details)
     except IndexError:
-        return "404"
+        return "404", 404
     except Exception as e:
-        print(e)
+        logger.error(e)
         raise e
 
 
