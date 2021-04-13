@@ -89,7 +89,7 @@ class Member():
                 self.REPOS_URL,
                 self.repos,
                 self.nRepos
-                )
+            )
         except NameError:
             logger.error("User not found")
         except Exception as e:

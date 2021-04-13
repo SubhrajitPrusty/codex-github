@@ -61,7 +61,7 @@ def searchMember():
             fuzz.partial_ratio(sanitize(x['name']), query.lower()),
             fuzz.partial_ratio(sanitize(x['username']), query.lower())
         ]
-        ), "data": x} for x in content]
+    ), "data": x} for x in content]
 
     ratios = sorted(ratios, key=lambda k: k['ratio'])
 
@@ -88,6 +88,7 @@ def profile(username):
     except Exception as e:
         print(e)
         raise e
+
 
 @app.route("/robots.txt")
 def static_from_root():
